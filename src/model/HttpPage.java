@@ -52,12 +52,7 @@ public class HttpPage {
 		
 		try{
 		String aux = null;
-		try {
-			aux = Global.HTML_DIR + url.toURI();
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		aux = Global.HTML_DIR + url.getHost() + url.hashCode();
 		File file= new File(aux);
 		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 		
@@ -67,7 +62,7 @@ public class HttpPage {
 		
 		while ((inputLine = in.readLine()) != null) {
             // Imprime página no console
-            System.out.println(inputLine);
+            System.out.println(inputLine);//DEBUG
             // Grava pagina no arquivo
             out.write(inputLine);
             out.newLine();
