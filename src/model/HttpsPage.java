@@ -109,7 +109,7 @@ public class HttpsPage {
 		
 		try{
 		String aux = null;
-		aux = Global.HTML_DIR + this.url.getHost() + this.url.hashCode();
+		aux = Global.HTML_DIR  + this.url.hashCode() + this.url.getHost();
 		File file= new File(aux);
 		BufferedReader in = new BufferedReader(new InputStreamReader(this.url.openStream()));
 		
@@ -119,15 +119,16 @@ public class HttpsPage {
 		
 		while ((inputLine = in.readLine()) != null) {
             // Imprime página no console
-            System.out.println(inputLine);//DEBUG
+           // System.out.println(inputLine);//DEBUG
             // Grava pagina no arquivo
             out.write(inputLine);
             out.newLine();
+            aux = aux+inputLine + "\n";
         }
 		in.close();
 		out.flush();
 		out.close();
-		return inputLine;
+		return aux;
 		}catch(IOException e){
 			
 			e.printStackTrace();

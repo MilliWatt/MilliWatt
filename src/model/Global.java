@@ -12,6 +12,7 @@ public class Global {
 	
 	
 	public static final String MW_CAMPUS = MW_GRADUATE + "oferta_campus.aspx";//obter lista de campus
+	public static final String MW_CAMPUS_ID = "cod=";//utilizado para parse de campus
 	
 	//cod de 1 a 4 sendo 4 o Gama
 	public static final String MW_DEPARTMENT = MW_GRADUATE+"oferta_dep.aspx?cod="; //obter lista de departamentos e seus codigos.
