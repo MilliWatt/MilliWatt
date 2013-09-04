@@ -5,20 +5,22 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
 
+import model.Campus;
 import model.Global;
 import model.HttpPage;
 import model.HttpsPage;
-
+import controller.*;
 
 public class MainTeste {
 	public static void main(String args[]){
 		
-		HttpsPage site = new HttpsPage(Global.MW_CAMPUS);
-		site.connect();
+		ArrayList<Campus> list = null;
+		list = DAOCampus.getCampusList();
+		list.toString();
 		
-		String htmlString = site.getOnlyHTML();
-		System.out.println(htmlString);
+		
 		/*
 		File file = new File("./teste");
 		
@@ -44,46 +46,12 @@ public class MainTeste {
 */
 		//System.out.println(aux);
 		
-		
-		String id_campus="";
-		String nome_campus="";
-		String urlName_campus="";
-		int index =0;
-	while(index !=-1){
-		 index = htmlString.indexOf(Global.MW_CAMPUS_ID)+4;//4 de offset para pegar o codigo da disciplina
 
-		while (htmlString.charAt(index)!='>'){
-			id_campus += htmlString.charAt(index);
-			index++;
-		}
-		index++;
-		
-		while (htmlString.charAt(index)!='<'){
-			nome_campus += htmlString.charAt(index);
-			index++;
-		}
-		index++;
-		
-		urlName_campus = Global.MW_DEPARTMENT + id_campus;
-		
-		System.out.println(id_campus);
-		System.out.println(nome_campus);
-		System.out.println(urlName_campus);
-		
-		htmlString=htmlString.substring(index);
-		index = htmlString.indexOf(Global.MW_CAMPUS_ID); // se for -1 PARA
-		id_campus="";
-		nome_campus="";
-		 urlName_campus="";
-	}
 		
 		//System.out.println(aux.charAt(aux2));
 	
-		site.disconnect();
-		
-		
-		
 		
 	}
+
 
 }
