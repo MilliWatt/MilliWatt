@@ -15,6 +15,8 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 
+import milliwatt.utils.Global;
+
 public class HttpsPage extends Page{
 
 	String urlName;
