@@ -1,4 +1,4 @@
-package milliwatt.controller;
+package milliwatt.DAO;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import milliwatt.model.Campus;
 import milliwatt.model.Global;
 import milliwatt.model.HttpsPage;
 
-public class DAOCampus {
+public class CampusDAO {
 	
 	public static ArrayList<Campus> getCampusList(){
 		ArrayList<Campus> CampusList = new ArrayList<Campus>();

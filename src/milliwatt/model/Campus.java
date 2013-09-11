@@ -21,14 +21,12 @@ public class Campus {
 	}
 
 	public Campus(String id, String nome, String urlName) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.urlName = urlName;
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.departamentoList = new ArrayList<Departamento>();
@@ -80,8 +78,6 @@ public class Campus {
 				+ ", url=" + url + ", departamentoList=" + departamentoList
 				+ "]";
 	}
-	
-	
 	
 	//metodos que fazem algo mais ninja.
 	

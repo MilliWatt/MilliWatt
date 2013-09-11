@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
+import milliwatt.DAO.CampusDAO;
 import milliwatt.controller.*;
 import milliwatt.model.Campus;
 import milliwatt.model.Global;
@@ -18,7 +19,7 @@ public class MainTeste {
 	public static void main(String args[]){
 		
 		ArrayList<Campus> list = null;
-		list = DAOCampus.getCampusList();
+		list = CampusDAO.getCampusList();
 		list.toString();
 		
 
