@@ -10,6 +10,8 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import milliwatt.utils.Global;
+
 public class HttpPage extends Page{
 	
 	String urlName;
