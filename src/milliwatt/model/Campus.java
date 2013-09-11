@@ -1,4 +1,4 @@
-package model;
+package milliwatt.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;

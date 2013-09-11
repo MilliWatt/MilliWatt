@@ -1,4 +1,4 @@
-package view;
+package milliwatt.view;
 
 public class MainView {
 

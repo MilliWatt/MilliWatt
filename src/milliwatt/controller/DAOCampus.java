@@ -1,10 +1,10 @@
-package controller;
+package milliwatt.controller;
 
 import java.util.ArrayList;
 
-import model.Campus;
-import model.Global;
-import model.HttpsPage;
+import milliwatt.model.Campus;
+import milliwatt.model.Global;
+import milliwatt.model.HttpsPage;
 
 public class DAOCampus {
 	

@@ -1,4 +1,4 @@
-package model;
+package milliwatt.model;
 
 public class Global {
 	//sempre termina com BARRA

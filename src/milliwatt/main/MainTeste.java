@@ -1,3 +1,4 @@
+package milliwatt.main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,11 +8,11 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
-import model.Campus;
-import model.Global;
-import model.HttpPage;
-import model.HttpsPage;
-import controller.*;
+import milliwatt.controller.*;
+import milliwatt.model.Campus;
+import milliwatt.model.Global;
+import milliwatt.model.HttpPage;
+import milliwatt.model.HttpsPage;
 
 public class MainTeste {
 	public static void main(String args[]){
@@ -20,7 +21,7 @@ public class MainTeste {
 		list = DAOCampus.getCampusList();
 		list.toString();
 		
-		
+
 		/*
 		File file = new File("./teste");
 		
