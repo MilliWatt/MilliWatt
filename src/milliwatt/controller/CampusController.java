@@ -41,9 +41,11 @@ public class CampusController {
 			
 			urlName_campus = Global.MW_DEPARTMENT + id_campus;
 			
+			/*
 			System.out.println(id_campus);
 			System.out.println(nome_campus);
 			System.out.println(urlName_campus);
+			*/
 			
 			htmlString=htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID); // se for -1 PARA
