@@ -8,21 +8,23 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
-import milliwatt.DAO.CampusDAO;
 import milliwatt.controller.*;
 import milliwatt.model.Campus;
-import milliwatt.model.Global;
 import milliwatt.model.HttpPage;
 import milliwatt.model.HttpsPage;
+import milliwatt.utils.Global;
 
 public class MainTeste {
 	public static void main(String args[]){
 		
-		ArrayList<Campus> list = null;
-		list = CampusDAO.getCampusList();
-		list.toString();
-		
+	//CampusController.getCampusList().toString();	
+		/*
+	ArrayList<Campus> campusList = CampusController.getCampusList();
+	Campus c = campusList.get(3);
+	System.out.println("\n\n\n"+c.getUrlName());*/
 
+		DepartamentoController.getDepartmentList();	
+	
 		/*
 		File file = new File("./teste");
 		
