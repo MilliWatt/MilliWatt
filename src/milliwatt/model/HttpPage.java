@@ -10,44 +10,33 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class HttpPage {
+public class HttpPage extends Page{
 	
 	String urlName;
 	URL url;
 	
-	
-	
-
 	public HttpPage(String urlName) {
-		super();
+		//super();
 		this.urlName = urlName;
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-
-	public void connect() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void disconnect() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	@Override
+	public void connect() {}
 	
+	@Override
+	public void disconnect() {}
+	
+	@Override
 	public String getHTML() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
+	@Override
 	public String getOnlyHTML() {
 		
 		try{
@@ -76,7 +65,6 @@ public class HttpPage {
 			
 			e.printStackTrace();
 		}
-		
 		
 		return null;
 	}
