@@ -10,10 +10,14 @@ public class Global {
 	public static final String MW_GRADUATE = MW_HOME + "graduacao/";
 	public static final String MW_POSTGRADUATE = MW_HOME + "posgraduacao/";
 	
-	
 	public static final String MW_CAMPUS = MW_GRADUATE + "oferta_campus.aspx";//obter lista de campus
 	public static final String MW_CAMPUS_ID = "cod=";//utilizado para parse de campus
 	public static final String MW_DEPARTAMENT_ID = "cod=";
+	
+	public static final int DAR_CODE_ID = 0;
+	public static final int PLA_CODE_ID = 1;
+	public static final int CEI_CODE_ID = 2;
+	public static final int FGA_CODE_ID = 3;
 	
 	//cod de 1 a 4 sendo 4 o Gama
 	public static final String MW_DEPARTMENT = MW_GRADUATE+"oferta_dep.aspx?cod="; //obter lista de departamentos e seus codigos.
