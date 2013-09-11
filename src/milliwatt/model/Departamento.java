@@ -5,31 +5,39 @@ import java.net.URL;
 
 public class Departamento {
 
-	private int codigo;
+	private String codigo;
 	private String nome;
+	private String sigla;
 	private String urlName;
 	private URL url;
 	
 	
-	public Departamento(int codigo, String nome, String urlName, URL url) {
+	public Departamento(String codigo, String nome, String sigla, String urlName) {
 		
 		this.codigo = codigo;	
 		this.nome = nome;
+		this.sigla = sigla;
 		this.urlName = urlName;
-		this.url = url;
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void setCodigo(int codigo) {
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
+
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 	
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 	
