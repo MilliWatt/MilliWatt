@@ -15,131 +15,111 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 
-public class HttpsPage {
-	
+public class HttpsPage extends Page{
+
 	String urlName;
 	URL url;
 	HttpsURLConnection conn;
-	
-	
 
 	public HttpsPage(String urlName) {
-		super();
+		//super();
 		this.urlName = urlName;
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.setProperty("javax.net.ssl.trustStore", (Global.KEY_DIR +"matriculaweb.unb.br.jks"));		
+		System.setProperty("javax.net.ssl.trustStore", (Global.KEY_DIR + "matriculaweb.unb.br.jks"));
 	}
 
-
+	@Override
 	public void connect() {
+		
 		this.conn = new HttpsURLConnection(url) {
-			
+
 			@Override
-			public void connect() throws IOException {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void connect() throws IOException {}
+
 			@Override
 			public boolean usingProxy() {
-				// TODO Auto-generated method stub
 				return false;
 			}
-			
+
 			@Override
 			public void disconnect() {
-				// TODO Auto-generated method stub
-				//this.disconnect();
+				// this.disconnect();
 			}
-			
+
 			@Override
 			public Certificate[] getServerCertificates()
 					throws SSLPeerUnverifiedException {
-				// TODO Auto-generated method stub
 				return null;
 			}
-			
+
 			@Override
 			public Certificate[] getLocalCertificates() {
-				// TODO Auto-generated method stub
 				return null;
 			}
-			
+
 			@Override
 			public String getCipherSuite() {
-				// TODO Auto-generated method stub
 				return null;
 			}
 		};
-		
-		
+
 		this.conn.setDefaultHostnameVerifier(new HostnameVerifier() {
-			
 			@Override
 			public boolean verify(String arg0, SSLSession arg1) {
 				// TODO Auto-generated method stub
 				return true;
-			}
-		});
-		
+				}
+			});
 
-		
 	}
 
-
+	@Override
 	public void disconnect() {
-		// TODO Auto-generated method stub
 		this.conn.disconnect();
-		
+
 	}
 
-	
+	@Override
 	public String getHTML() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
+	@Override
 	public String getOnlyHTML() {
-		
-		try{
-		String aux = null;
-		aux = Global.HTML_DIR  + this.url.hashCode() + this.url.getHost();
-		File file= new File(aux);
-		BufferedReader in = new BufferedReader(new InputStreamReader(this.url.openStream()));
-		
-		BufferedWriter out = new BufferedWriter(new FileWriter(file));
-		
-		String inputLine;
-		
-		while ((inputLine = in.readLine()) != null) {
-            // Imprime página no console
-           // System.out.println(inputLine);//DEBUG
-            // Grava pagina no arquivo
-            out.write(inputLine);
-            out.newLine();
-            aux = aux+inputLine + "\n";
-        }
-		in.close();
-		out.flush();
-		out.close();
-		return aux;
-		}catch(IOException e){
-			
+
+		try {
+			String aux = null;
+			aux = Global.HTML_DIR + this.url.hashCode() + this.url.getHost();
+			File file = new File(aux);
+			BufferedReader in = new BufferedReader(new InputStreamReader(
+					this.url.openStream()));
+
+			BufferedWriter out = new BufferedWriter(new FileWriter(file));
+
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null) {
+				// Imprime página no console
+				// System.out.println(inputLine);//DEBUG
+				// Grava pagina no arquivo
+				out.write(inputLine);
+				out.newLine();
+				aux = aux + inputLine + "\n";
+			}
+			in.close();
+			out.flush();
+			out.close();
+			return aux;
+		} catch (IOException e) {
+
 			e.printStackTrace();
 		}
-		
-		
+
 		return null;
 	}
-	
-	
-	
-	
 
 }
