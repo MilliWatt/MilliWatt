@@ -46,6 +46,9 @@ public class DepartamentoController {
 			}
 			
 			//FALTA INVERTER A SIGLA AQUI
+			for(int i = sigla_departamento.length(); i > 0; i--){
+				sigla_departamento_invertida += sigla_departamento.charAt(i-1);
+			}
 			
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID)+4;
 			
@@ -65,6 +68,7 @@ public class DepartamentoController {
 			
 			System.out.println(id_departamento);
 			System.out.println(nome_departamento);
+			//System.out.println(sigla_departamento);
 			System.out.println(sigla_departamento_invertida);
 			System.out.println(urlName_departamento);
 			
@@ -78,11 +82,12 @@ public class DepartamentoController {
 			id_departamento="";
 			nome_departamento="";
 			urlName_departamento="";
+			sigla_departamento="";
+			sigla_departamento_invertida="";
 		}
 		
 		site.disconnect();
 		
 		return departamentoList;
-		//return null;
 	}
 }
