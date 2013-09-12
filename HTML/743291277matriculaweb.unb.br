@@ -164,7 +164,7 @@
 <TD width="620" background="/matriculaweb/imagens/efeito_fundo2.jpg" class="padrao" valign="top" align="left" class="padrao">
 <div style='padding:5px'>
 
-<center>1 departamento existente.<br><br><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Sigla</b></td><td><b>Denominação</b></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td>650</td><td>FGA</td><td><a href=oferta_dis.aspx?cod=650>UnB - Faculdade do Gama</a></td></tr></table></center>
+<center>1 departamento existente.<br><br><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Sigla</b></td><td><b>Denominação</b></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>638</td><td>FUP</td><td><a href=oferta_dis.aspx?cod=638>UnB - Faculdade de Planaltina</a></td></tr></table></center>
 
 
 </div>
