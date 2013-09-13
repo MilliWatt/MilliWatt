@@ -12,7 +12,9 @@ public class DepartamentoController {
 	public static String capturaSiglaDepartamento(String htmlString){
 		
 		String sigla_departamento = "";
+		
 		int index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
+		
 		index = index - 34;
 		
 		while (htmlString.charAt(index)!='>'){
@@ -22,6 +24,17 @@ public class DepartamentoController {
 		
 		return sigla_departamento;
 		
+	}
+	
+	public static String inverteSiglaDepartamento(String sigla_departamento){
+		
+		String sigla_departamento_invertida = "";
+		
+		for(int i = sigla_departamento.length(); i > 0; i--){
+			sigla_departamento_invertida += sigla_departamento.charAt(i-1);
+		}
+		
+		return sigla_departamento_invertida;
 	}
 	
 	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
@@ -53,10 +66,8 @@ public class DepartamentoController {
 		while(index !=-1){
 			
 			sigla_departamento = capturaSiglaDepartamento(htmlString);
-
-			for(int i = sigla_departamento.length(); i > 0; i--){
-				sigla_departamento_invertida += sigla_departamento.charAt(i-1);
-			}
+			
+			sigla_departamento_invertida = inverteSiglaDepartamento(sigla_departamento);
 			
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID)+4;
 			
