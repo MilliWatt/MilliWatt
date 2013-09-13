@@ -23,7 +23,7 @@ public class DepartamentoController {
 	public static String capturaIDDepartamento(String htmlString, int index){
 		
 		String id_departamento = "";
-		System.out.println(index);
+
 		while (htmlString.charAt(index)!='>'){
 			id_departamento += htmlString.charAt(index);
 			index++;
