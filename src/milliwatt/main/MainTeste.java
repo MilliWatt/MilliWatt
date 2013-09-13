@@ -20,7 +20,8 @@ public class MainTeste {
 		DepartamentoController.getDepartmentList(campusList,"4");	
 
 
-		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");
+		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "1");
+
 		DisciplinaController.getDisciplinasList(departamentoList);	
 		
 	}
