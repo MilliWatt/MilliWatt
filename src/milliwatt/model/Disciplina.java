@@ -10,7 +10,6 @@ public class Disciplina {
 	private String nomeDisciplina;
 	private String urlName;
 	private URL url;
-	ArrayList<Professor> professoresDisciplina;
 	ArrayList<Turma> turmasDisciplina;
 
 	public Disciplina(){
@@ -20,7 +19,6 @@ public class Disciplina {
 	public Disciplina(int codigoDisciplina, String nomeDisciplina, ArrayList<Professor> professoresDisciplina) {
 		this.codigoDisciplina = codigoDisciplina;
 		this.nomeDisciplina = nomeDisciplina;
-		this.professoresDisciplina = new ArrayList<Professor>();
 		this.turmasDisciplina = new ArrayList<Turma>();
 		try {
 			this.url = new URL(urlName);
@@ -59,14 +57,6 @@ public class Disciplina {
 
 	public void setNomeDisciplina(String nomeDisciplina) {
 		this.nomeDisciplina = nomeDisciplina;
-	}
-
-	public ArrayList<Professor> getProfessorDisciplina() {
-		return professoresDisciplina;
-	}
-
-	public void setProfessorDisciplina(ArrayList<Professor> professorDisciplina) {
-		this.professoresDisciplina = professorDisciplina;
 	}
 	
 	public ArrayList<Turma> getTurmasDisciplina() {
