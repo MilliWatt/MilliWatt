@@ -14,6 +14,7 @@ public class Global {
 	public static final String MW_CAMPUS_ID = "cod=";//utilizado para parse de campus
 	public static final String MW_DEPARTAMENT_ID = "cod=";
 	
+
 	public static final int DAR_CODE_ID = 1;
 	public static final int PLA_CODE_ID = 2;
 	public static final int CEI_CODE_ID = 3;
