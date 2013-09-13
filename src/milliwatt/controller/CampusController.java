@@ -43,8 +43,6 @@ public class CampusController {
 		
 		String htmlString = site.getOnlyHTML();
 		
-		//System.out.println(htmlString);
-		
 		String id_campus="";
 		String nome_campus="";
 		String urlName_campus="";
@@ -65,11 +63,11 @@ public class CampusController {
 			
 			urlName_campus = geraURLCampus(urlName_campus, id_campus);
 			
-			
+			/*
 			System.out.println(id_campus);
 			System.out.println(nome_campus);
 			System.out.println(urlName_campus);
-			
+			*/
 			
 			htmlString=htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID); // se for -1 PARA
