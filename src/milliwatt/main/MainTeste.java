@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 import milliwatt.controller.CampusController;
 import milliwatt.controller.DepartamentoController;
+import milliwatt.controller.DisciplinaController;
 import milliwatt.model.Campus;
 import milliwatt.model.page.Page;
+import milliwatt.model.Departamento;
+
 
 public class MainTeste {
 	public static void main(String args[]){
@@ -17,6 +20,9 @@ public class MainTeste {
 		DepartamentoController.getDepartmentList(campusList,"4");	
 
 
+		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");
+		DisciplinaController.getDisciplinasList(departamentoList);	
+		
 	}
 
 	/*
