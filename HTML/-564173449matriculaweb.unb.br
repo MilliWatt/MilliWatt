@@ -164,7 +164,7 @@
 <TD width="620" background="/matriculaweb/imagens/efeito_fundo2.jpg" class="padrao" valign="top" align="left" class="padrao">
 <div style='padding:5px'>
 
-<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Denominação</b></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>1</td><td><a href=oferta_dep.aspx?cod=1>Darcy Ribeiro</a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td>2</td><td><a href=oferta_dep.aspx?cod=2>Planaltina</a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>3</td><td><a href=oferta_dep.aspx?cod=3>Ceilândia</a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td>4</td><td><a href=oferta_dep.aspx?cod=4>Gama</a></td></tr></table></center>
+<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Denominação</b></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td>1</td><td><a href=oferta_dep.aspx?cod=1>Darcy Ribeiro</a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>2</td><td><a href=oferta_dep.aspx?cod=2>Planaltina</a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td>3</td><td><a href=oferta_dep.aspx?cod=3>Ceilândia</a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>4</td><td><a href=oferta_dep.aspx?cod=4>Gama</a></td></tr></table></center>
 
 
 </div>
