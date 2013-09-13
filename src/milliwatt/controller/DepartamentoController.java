@@ -9,11 +9,32 @@ import milliwatt.utils.Global;
 
 public class DepartamentoController {
 
-	public static String capturaSiglaDepartamento(String htmlString){
+	public static String capturaNomeDepartamento(String htmlString, int index){
+		
+		String nome_departamento = "";
+		
+		while (htmlString.charAt(index)!='<'){
+			nome_departamento += htmlString.charAt(index);
+			index++;
+		}
+		return nome_departamento;
+	}
+	
+	public static String capturaIDDepartamento(String htmlString, int index){
+		
+		String id_departamento = "";
+		
+		while (htmlString.charAt(index)!='>'){
+			id_departamento += htmlString.charAt(index);
+			index++;
+		}
+	
+		return id_departamento;
+	}
+	
+	public static String capturaSiglaDepartamento(String htmlString, int index){
 		
 		String sigla_departamento = "";
-		
-		int index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
 		
 		index = index - 34;
 		
@@ -61,29 +82,23 @@ public class DepartamentoController {
 		String sigla_departamento_invertida = "";
 		String nome_departamento = "";
 		Departamento departamento = null;
-		int index = 0;
+		int index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
 		
 		while(index !=-1){
 			
-			sigla_departamento = capturaSiglaDepartamento(htmlString);
+			sigla_departamento = capturaSiglaDepartamento(htmlString, index);
 			
 			sigla_departamento_invertida = inverteSiglaDepartamento(sigla_departamento);
 			
-			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID)+4;
+			index += 4;
 			
-			while (htmlString.charAt(index)!='>'){
-				id_departamento += htmlString.charAt(index);
-				index++;
-			}
+			id_departamento = capturaIDDepartamento(htmlString, index);
 			
-			index++;
+			index += 1;
 			
-			while (htmlString.charAt(index)!='<'){
-				nome_departamento += htmlString.charAt(index);
-				index++;
-			}
+			nome_departamento = capturaNomeDepartamento(htmlString, index);
 			
-			index++;
+			index += 1;
 			
 			System.out.println(id_departamento);
 			System.out.println(nome_departamento);
