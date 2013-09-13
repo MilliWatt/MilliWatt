@@ -81,7 +81,9 @@ public class CampusController {
 			nome_campus="";
 			urlName_campus="";
 		}
-		site.disconnect();	
+		
+		site.disconnect();
+		
 		return CampusList;
 	}
 	
