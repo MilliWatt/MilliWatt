@@ -68,7 +68,7 @@ public class DepartamentoController {
 		
 		for(int i = 0; i < campusList.size(); i++ ){
 			if(campusList.get(i).getId().equals(id)) 
-				 campus = campusList.get(i);//Recebe o objeto Campus que representa a FGA
+				 campus = campusList.get(i);
 		}
 		
 		return campus;
@@ -96,6 +96,7 @@ public class DepartamentoController {
 		String htmlString = site.getOnlyHTML();
 		
 		while(index !=-1){
+
 			
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
 
@@ -119,18 +120,18 @@ public class DepartamentoController {
 			System.out.println(nome_departamento);
 			//System.out.println(sigla_departamento);
 			System.out.println(sigla_departamento_invertida);
-			System.out.println(urlName_departamento);
+			System.out.println(urlNameDepartamento);
 			
 			
 			htmlString = htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID); // se for -1 PARA
 			
-			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
+			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlNameDepartamento);
 			departamentoList.add(departamento);
 			
 			id_departamento="";
 			nome_departamento="";
-			urlName_departamento="";
+			urlNameDepartamento="";
 			sigla_departamento="";
 			sigla_departamento_invertida="";
 		}
