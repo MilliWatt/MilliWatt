@@ -23,7 +23,7 @@ public class DepartamentoController {
 	public static String capturaIDDepartamento(String htmlString, int index){
 		
 		String id_departamento = "";
-		
+		System.out.println(index);
 		while (htmlString.charAt(index)!='>'){
 			id_departamento += htmlString.charAt(index);
 			index++;
@@ -58,47 +58,55 @@ public class DepartamentoController {
 		return sigla_departamento_invertida;
 	}
 	
-	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
+	public static Campus capturaCampusDesejado(ArrayList<Campus> campusList, String id){
 		
-		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
-		Campus c = null;
+		Campus campus = null;
 		
 		for(int i = 0; i < campusList.size(); i++ ){
 			if(campusList.get(i).getId().equals(id)) 
-				 c = campusList.get(i);//Recebe o objeto Campus que representa a FGA
+				 campus = campusList.get(i);//Recebe o objeto Campus que representa a FGA
 		}
 		
-		String urlName_departamento = c.getUrlName();
+		return campus;
+	}
+	
+	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
 		
-		//System.out.println(urlName_departamento);
+		int index = 0;
+		String id_departamento = "";
+		String sigla_departamento = "";
+		String sigla_departamento_invertida = "";
+		String nome_departamento = "";
+		Departamento departamento = null;
+		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
+		
+		Campus campusDesejado = capturaCampusDesejado(campusList, id);
+		
+		String urlName_departamento = campusDesejado.getUrlName();
+		
 		HttpsPage site = new HttpsPage(urlName_departamento);
 		
 		site.connect();
 		
 		String htmlString = site.getOnlyHTML();
 		
-		String id_departamento = "";
-		String sigla_departamento = "";
-		String sigla_departamento_invertida = "";
-		String nome_departamento = "";
-		Departamento departamento = null;
-		int index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
-		
 		while(index !=-1){
 			
+			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
+
 			sigla_departamento = capturaSiglaDepartamento(htmlString, index);
-			
+				
 			sigla_departamento_invertida = inverteSiglaDepartamento(sigla_departamento);
 			
-			index += 4;
-			
+			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID)+4;
+
 			id_departamento = capturaIDDepartamento(htmlString, index);
-			
-			index += 1;
-			
+
+			index++;
+		
 			nome_departamento = capturaNomeDepartamento(htmlString, index);
 			
-			index += 1;
+			index++;
 			
 			System.out.println(id_departamento);
 			System.out.println(nome_departamento);
@@ -124,4 +132,5 @@ public class DepartamentoController {
 		
 		return departamentoList;
 	}
+
 }
