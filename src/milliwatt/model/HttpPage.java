@@ -12,33 +12,42 @@ import java.net.URL;
 
 import milliwatt.utils.Global;
 
-public class HttpPage extends Page{
+public class HttpPage extends Page implements PagePattern{
 	
-	String urlName;
-	URL url;
 	
-	public HttpPage(String urlName) {
-		//super();
-		this.urlName = urlName;
-		try {
-			this.url = new URL(urlName);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+	
+	public HttpPage(String urlName, URL url) {
+		super(urlName);
+		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+	
+
+//
+//	public HttpPage(String urlName) {
+//		//super();
+//		this.urlName = urlName;
+//		try {
+//			this.url = new URL(urlName);
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
+//	}
+
+	
+
+
 	public void connect() {}
 	
-	@Override
+	
 	public void disconnect() {}
 	
-	@Override
+	
 	public String getHTML() {
 		return null;
 	}
 	
-	@Override
+	
 	public String getOnlyHTML() {
 		
 		try{

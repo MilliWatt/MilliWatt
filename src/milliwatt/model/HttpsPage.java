@@ -19,23 +19,50 @@ import java.security.cert.Certificate;
 
 import milliwatt.utils.Global;
 
-public class HttpsPage extends Page{
+public class HttpsPage extends Page implements PagePattern{
 
-	String urlName;
-	URL url;
+
 	HttpsURLConnection conn;
 
+	
+	
+	
+	
+//	public HttpsPage(String urlName) {
+//		this.urlName = urlName;
+//		try {
+//			this.url = new URL(urlName);
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
+//		System.setProperty("javax.net.ssl.trustStore", (Global.KEY_DIR + "matriculaweb.unb.br.jks"));
+//	}
+
+	
 	public HttpsPage(String urlName) {
-		this.urlName = urlName;
-		try {
-			this.url = new URL(urlName);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+		super(urlName);
 		System.setProperty("javax.net.ssl.trustStore", (Global.KEY_DIR + "matriculaweb.unb.br.jks"));
+		this.conn = null;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+
+	public HttpsURLConnection getConn() {
+		return conn;
 	}
 
-	@Override
+
+
+
+	public void setConn(HttpsURLConnection conn) {
+		this.conn = conn;
+	}
+
+
+
+
 	public void connect() {
 		
 		this.conn = new HttpsURLConnection(url) {
@@ -80,18 +107,18 @@ public class HttpsPage extends Page{
 
 	}
 
-	@Override
+	
 	public void disconnect() {
 		this.conn.disconnect();
 
 	}
 
-	@Override
+	
 	public String getHTML() {
 		return null;
 	}
 
-	@Override
+	
 	public String getOnlyHTML() {
 
 		try {
