@@ -1,4 +1,4 @@
-package milliwatt.model;
+package milliwatt.model.page;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,17 +6,20 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import com.sun.net.ssl.HttpsURLConnection;
+
 import milliwatt.utils.Global;
 
-public class HttpPage extends Page implements PagePattern{
+public class HttpPage extends Page {
 	
+	HttpURLConnection conn;
 	
-	
-	public HttpPage(String urlName, URL url) {
+	public HttpPage(String urlName) {
 		super(urlName);
 		// TODO Auto-generated constructor stub
 	}

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import milliwatt.controller.CampusController;
 import milliwatt.controller.DepartamentoController;
 import milliwatt.model.Campus;
+import milliwatt.model.page.Page;
 
 public class MainTeste {
 	public static void main(String args[]){
@@ -13,8 +14,12 @@ public class MainTeste {
 		//Campus c = campusList.get(3);
 		//System.out.println("\n\n\n"+c.getUrlName());
 		
-		ArrayList<Campus> campusList = CampusController.getCampusList();
-		DepartamentoController.getDepartmentList(campusList,"4");	
+		Page p =  Page.getPage("http:\\www.google.com");
+		
+//		System.out.println(p.toString());
+
+//		ArrayList<Campus> campusList = CampusController.getCampusList();
+//		DepartamentoController.getDepartmentList(campusList,"4");	
 		
 		/*
 		File file = new File("./teste");

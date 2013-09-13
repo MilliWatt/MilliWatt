@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
-import milliwatt.model.HttpsPage;
+import milliwatt.model.page.HttpsPage;
 import milliwatt.utils.Global;
 
 public class DepartamentoController {

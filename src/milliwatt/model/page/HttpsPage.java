@@ -1,4 +1,4 @@
-package milliwatt.model;
+package milliwatt.model.page;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +19,7 @@ import java.security.cert.Certificate;
 
 import milliwatt.utils.Global;
 
-public class HttpsPage extends Page implements PagePattern{
+public class HttpsPage extends Page {
 
 
 	HttpsURLConnection conn;
