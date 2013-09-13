@@ -102,7 +102,7 @@ public class DepartamentoController {
 
 			id_departamento = capturaIDDepartamento(htmlString, index);
 
-			index++;
+			index += 4;
 		
 			nome_departamento = capturaNomeDepartamento(htmlString, index);
 			
