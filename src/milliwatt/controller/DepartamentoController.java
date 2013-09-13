@@ -20,6 +20,10 @@ public class DepartamentoController {
 		return nome_departamento;
 	}
 	
+	public static String geraURLDepartamento(String id_departamento){
+		return Global.MW_DISCIPLINE + id_departamento;
+	}
+	
 	public static String capturaIDDepartamento(String htmlString, int index){
 		
 		String id_departamento = "";
@@ -77,14 +81,15 @@ public class DepartamentoController {
 		String sigla_departamento = "";
 		String sigla_departamento_invertida = "";
 		String nome_departamento = "";
+		String urlName_departamento = "";
 		Departamento departamento = null;
 		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
 		
 		Campus campusDesejado = capturaCampusDesejado(campusList, id);
 		
-		String urlName_departamento = campusDesejado.getUrlName();
+		String urlName_campus = campusDesejado.getUrlName();
 		
-		HttpsPage site = new HttpsPage(urlName_departamento);
+		HttpsPage site = new HttpsPage(urlName_campus);
 		
 		site.connect();
 		
@@ -107,6 +112,8 @@ public class DepartamentoController {
 			nome_departamento = capturaNomeDepartamento(htmlString, index);
 			
 			index++;
+			
+			urlName_departamento = geraURLDepartamento(id_departamento);
 			
 			System.out.println(id_departamento);
 			System.out.println(nome_departamento);
