@@ -9,6 +9,21 @@ import milliwatt.utils.Global;
 
 public class DepartamentoController {
 
+	public static String capturaSiglaDepartamento(String htmlString){
+		
+		String sigla_departamento = "";
+		int index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
+		index = index - 34;
+		
+		while (htmlString.charAt(index)!='>'){
+			sigla_departamento += htmlString.charAt(index);
+			index--;
+		}
+		
+		return sigla_departamento;
+		
+	}
+	
 	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
 		
 		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
@@ -37,15 +52,8 @@ public class DepartamentoController {
 		
 		while(index !=-1){
 			
-			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
-			index = index - 34;
-			
-			while (htmlString.charAt(index)!='>'){
-				sigla_departamento += htmlString.charAt(index);
-				index--;
-			}
-			
-			//FALTA INVERTER A SIGLA AQUI
+			sigla_departamento = capturaSiglaDepartamento(htmlString);
+
 			for(int i = sigla_departamento.length(); i > 0; i--){
 				sigla_departamento_invertida += sigla_departamento.charAt(i-1);
 			}
