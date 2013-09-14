@@ -52,9 +52,7 @@ public class CampusController {
 		while(index !=-1){
 			//4 de offset para pegar o codigo da disciplina
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID)+4;
-			
 			id_campus = capturaIdCampus(htmlString, index);
-			
 			index += 2;//problemimnha
 			
 			nome_campus = capturaNomeCampus(htmlString, index);
