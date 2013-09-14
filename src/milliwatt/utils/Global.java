@@ -14,13 +14,17 @@ public class Global {
 	public static final String MW_CAMPUS_ID = "cod=";//utilizado para parse de campus
 	public static final String MW_DEPARTAMENT_ID = "cod=";
 	public static final String MW_DISCIPLINE_ID = "oferta_dados.aspx?cod=";
+	public static final String MW_CLASS_ID ="<font-size=4><b>";
+	public static final String MW_CLASS_VACANCIES ="Vagas:";
+	public static final String MW_CLASS_VACANCIES_OCCUPIED ="Ocup.:";
+	public static final String MW_CLASS_VACANCIES_AVAILABLE = "Disp.:";
+	public static final String MW_CLASS_DAYS_BEGIN = "border: white 1px solid";
+	public static final String MW_CLASS_DAYS_END = "Reserva/Vagas";
 	
-
-	public static final int DAR_CODE_ID = 1;
-	public static final int PLA_CODE_ID = 2;
-	public static final int CEI_CODE_ID = 3;
-	public static final int FGA_CODE_ID = 4;
-	
+	public static final String DAR_CODE_ID = "1";
+	public static final String PLA_CODE_ID = "2";
+	public static final String CEI_CODE_ID = "3";
+	public static final String FGA_CODE_ID = "4";
 	//cod de 1 a 4 sendo 4 o Gama
 	public static final String MW_DEPARTMENT = MW_GRADUATE+"oferta_dep.aspx?cod="; //obter lista de departamentos e seus codigos.
 	

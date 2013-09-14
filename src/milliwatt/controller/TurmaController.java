@@ -4,49 +4,82 @@ import java.util.ArrayList;
 
 import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
+import milliwatt.model.Disciplina;
+import milliwatt.model.Professor;
+import milliwatt.model.Turma;
 import milliwatt.model.page.HttpsPage;
 import milliwatt.utils.Global;
 
 public class TurmaController {
-public static String capturaNomeDepartamento(String htmlString, int index){
+	
+	public static String capturaTotalVagasDisciplina(String htmlString, int index){
 		
-		String nome_departamento = "";
+		String total_vagas = "";
+		
+		index += 7;
+		
+		while (htmlString.charAt(index)!= ' '){
+			total_vagas += htmlString.charAt(index);
+			index++;
+		}
+		return total_vagas;
+	}
+	
+	public static String capturaVagasOcupadasDisciplina(String htmlString, int index){
+		
+		String vagas_ocupadas = "";
+		
+		index += 23;
+		
+		while (htmlString.charAt(index)!= '<'){
+			vagas_ocupadas += htmlString.charAt(index);
+			index++;
+		}
+		return vagas_ocupadas;
+	}
+	
+	public static String capturaVagasDisponiveisDisciplina(String htmlString, int index){
+		
+		String vagas_disponiveis = "";
+		
+		index += 23;
+		
+		while (htmlString.charAt(index)!= '<'){
+			vagas_disponiveis += htmlString.charAt(index);
+			index++;
+		}
+		return vagas_disponiveis;
+	}
+	
+	public static ArrayList<String> divideStringDias(String inicioStringDias, String fimStringDias, String htmlString){
+		
+		ArrayList<String> diasHorariosProfessoresLocalTurma = new ArrayList<String>();
+
+		int inicio = htmlString.indexOf(inicioStringDias);
+		int fim = htmlString.indexOf(fimStringDias);
+		
+		String htmlStringPartida = htmlString.substring(inicio, fim);
+		
+		while (htmlString.charAt(index)!='>'){
+			 += htmlStringPartida.charAt(index);
+			index++;
+		}
+	
+		return diasHorariosProfessoresLocalTurma;
+	}
+	
+	public static String capturaIdentificadorDisciplina(String htmlString, int index){
+		
+		String identificador = "";
+		
+		index += 16;
 		
 		while (htmlString.charAt(index)!='<'){
-			nome_departamento += htmlString.charAt(index);
+			identificador += htmlString.charAt(index);
 			index++;
 		}
-		return nome_departamento;
-	}
-	
-	public static String geraURLDepartamento(String id_departamento){
-		return Global.MW_DISCIPLINE + id_departamento;
-	}
-	
-	public static String capturaIDDepartamento(String htmlString, int index){
 		
-		String id_departamento = "";
-
-		while (htmlString.charAt(index)!='>'){
-			id_departamento += htmlString.charAt(index);
-			index++;
-		}
-	
-		return id_departamento;
-	}
-	
-	public static String capturaSiglaDepartamento(String htmlString, int index){
-		
-		String sigla_departamento = "";
-		
-		index = index - 34;
-		
-		while (htmlString.charAt(index)!='>'){
-			sigla_departamento += htmlString.charAt(index);
-			index--;
-		}
-		
-		return sigla_departamento;
+		return identificador;
 		
 	}
 	
@@ -61,34 +94,37 @@ public static String capturaNomeDepartamento(String htmlString, int index){
 		return sigla_departamento_invertida;
 	}
 	
-	public static Campus capturaCampusDesejado(ArrayList<Campus> campusList, String id){
+	public static Disciplina capturaDisciplinaDesejada(ArrayList<Disciplina> disciplinaList, String id_disciplina){
 		
-		Campus campus = null;
+		Disciplina disciplina = null;
 		
-		for(int i = 0; i < campusList.size(); i++ ){
-			if(campusList.get(i).getId().equals(id)) 
-				 campus = campusList.get(i);
+		for (Disciplina d : disciplinaList){
+			if (d.getCodigoDisciplina().equals(id_disciplina)){
+				disciplina = d;
+			}
 		}
 		
-		return campus;
+		return disciplina;
 	}
 	
-	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
+	public static ArrayList<Turma> getTurmaList(ArrayList<Disciplina> disciplinaList, String id_disciplina){
 		
 		int index = 0;
-		String id_departamento = "";
-		String sigla_departamento = "";
-		String sigla_departamento_invertida = "";
-		String nome_departamento = "";
-		String urlName_departamento = "";
-		Departamento departamento = null;
-		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
+		String identificador = "";
+		String horarioInicio = "";
+		String horarioFim = "";
+		String total_vagas = "";
+		String vagas_disponiveis = "";
+		String vagas_ocupadas = "";
+		ArrayList<Professor> professorList = new ArrayList<Professor>();
+		ArrayList<String> diaList = new ArrayList<String>();
+		ArrayList<Turma> turmaList = new ArrayList<Turma>();
 		
-		Campus campusDesejado = capturaCampusDesejado(campusList, id);
+		Disciplina disciplinaDesejada = capturaDisciplinaDesejada(disciplinaList, id_disciplina);
 		
-		String urlName_campus = campusDesejado.getUrlName();
+		String urlName_disciplina = disciplinaDesejada.getUrlName();
 		
-		HttpsPage site = new HttpsPage(urlName_campus);
+		HttpsPage site = new HttpsPage(urlName_disciplina);
 		
 		site.connect();
 		
@@ -96,47 +132,46 @@ public static String capturaNomeDepartamento(String htmlString, int index){
 		
 		while(index !=-1){
 
-			
-			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
+			index = htmlString.indexOf(Global.MW_CLASS_ID);
 
-			sigla_departamento = capturaSiglaDepartamento(htmlString, index);
-				
-			sigla_departamento_invertida = inverteSiglaDepartamento(sigla_departamento);
+			identificador = capturaIdentificadorDisciplina(htmlString, index);
 			
-			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID)+4;
+			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES);
+			
+			total_vagas = capturaTotalVagasDisciplina(htmlString, index);
+			
+			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_OCCUPIED);
+			
+			vagas_ocupadas = capturaVagasOcupadasDisciplina(htmlString, index);
+			
+			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_AVAILABLE);
+			
+			vagas_disponiveis = capturaVagasDisponiveisDisciplina(htmlString, index);
+			
+			divideStringDias(Global.MW_CLASS_DAYS_BEGIN, Global.MW_CLASS_DAYS_END, htmlString);
 
-			id_departamento = capturaIDDepartamento(htmlString, index);
-
-			index += 4;//probleminha
-		
-			nome_departamento = capturaNomeDepartamento(htmlString, index);
-			
-			index++;
-			
-			urlName_departamento = geraURLDepartamento(id_departamento);
-			
 			/*System.out.println(id_departamento);
 			System.out.println(nome_departamento);
 			//System.out.println(sigla_departamento);
 			System.out.println(sigla_departamento_invertida);
 			System.out.println(urlName_departamento);*/
 			
-			
+			index = htmlString.indexOf(Global.MW_CLASS_DAYS_END);
 			htmlString = htmlString.substring(index);// Parte a String
-			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID); // se for -1 PARA
+			//index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID); // se for -1 PARA
 			
-			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
-			departamentoList.add(departamento);
+			//departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
+			//departamentoList.add(departamento);
 			
-			id_departamento="";
-			nome_departamento="";
-			urlName_departamento="";
-			sigla_departamento="";
-			sigla_departamento_invertida="";
+//			id_departamento="";
+//			nome_departamento="";
+//			urlName_departamento="";
+//			sigla_departamento="";
+//			sigla_departamento_invertida="";
 		}
 		
 		site.disconnect();
 		
-		return departamentoList;
+		return turmaList;
 	}
 }

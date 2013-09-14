@@ -16,7 +16,7 @@ public class MainTeste {
 
 		ArrayList<Campus> campusList = CampusController.getCampusList();		
 		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "1");		
-		DisciplinaController.getDisciplinaList(departamentoList, "039");
+		DisciplinaController.getDisciplinaList(departamentoList, "113");
 		
 		
 		

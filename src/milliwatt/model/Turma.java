@@ -9,19 +9,19 @@ public class Turma {
 	private String identificador;
 	private String horarioInicioTurma;
 	private String horarioFimTurma;
-	private int total_vagas;
-	private int vagas_disponiveis;
-	private int vagas_ocupadas;
+	private String total_vagas;
+	private String vagas_disponiveis;
+	private String vagas_ocupadas;
 	private ArrayList<String> diasTurma;
 	private ArrayList<Professor> listaProfessores;
 	private Disciplina disciplina;
-	private String urlName;
-	private URL url;
+	//private String urlName;
+	//private URL url;
 
 	public Turma(){}
 
-	public Turma(String identificador, String horarioInicioTurma,String horarioFimTurma, int total_vagas, 
-			int vagas_disponiveis,int vagas_ocupadas, ArrayList<String> diasTurma,
+	public Turma(String identificador, String horarioInicioTurma,String horarioFimTurma, String total_vagas, 
+			String vagas_disponiveis,String vagas_ocupadas, ArrayList<String> diasTurma,
 			ArrayList<Professor> listaProfessores, Disciplina disciplina) {
 		this.identificador = identificador;
 		this.horarioInicioTurma = horarioInicioTurma;
@@ -32,11 +32,11 @@ public class Turma {
 		this.diasTurma = diasTurma;
 		this.listaProfessores = listaProfessores;
 		this.disciplina = disciplina;
-		try {
-			this.url = new URL(urlName);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			this.url = new URL(urlName);
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	public Disciplina getDisciplina() {
@@ -47,43 +47,43 @@ public class Turma {
 		this.disciplina = disciplina;
 	}
 
-	public String getUrlName() {
-		return urlName;
-	}
+//	public String getUrlName() {
+//		return urlName;
+//	}
+//
+//	public void setUrlName(String urlName) {
+//		this.urlName = urlName;
+//	}
+//
+//	public URL getUrl() {
+//		return url;
+//	}
+//
+//	public void setUrl(URL url) {
+//		this.url = url;
+//	}
 
-	public void setUrlName(String urlName) {
-		this.urlName = urlName;
-	}
-
-	public URL getUrl() {
-		return url;
-	}
-
-	public void setUrl(URL url) {
-		this.url = url;
-	}
-
-	public int getTotal_vagas() {
+	public String getTotal_vagas() {
 		return total_vagas;
 	}
 
-	public void setTotal_vagas(int total_vagas) {
+	public void setTotal_vagas(String total_vagas) {
 		this.total_vagas = total_vagas;
 	}
 
-	public int getVagas_disponiveis() {
+	public String getVagas_disponiveis() {
 		return vagas_disponiveis;
 	}
 
-	public void setVagas_disponiveis(int vagas_disponiveis) {
+	public void setVagas_disponiveis(String vagas_disponiveis) {
 		this.vagas_disponiveis = vagas_disponiveis;
 	}
 
-	public int getVagas_ocupadas() {
+	public String getVagas_ocupadas() {
 		return vagas_ocupadas;
 	}
 
-	public void setVagas_ocupadas(int vagas_ocupadas) {
+	public void setVagas_ocupadas(String vagas_ocupadas) {
 		this.vagas_ocupadas = vagas_ocupadas;
 	}
 
