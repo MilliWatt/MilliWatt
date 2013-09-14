@@ -48,9 +48,9 @@ public class CampusController {
 		String urlName_campus="";
 		Campus campus = null;
 		int index = 0;
-		
+
 		while(index !=-1){
-			//4 de offset para pegar o codigo da disciplina
+
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID)+4;
 			id_campus = capturaIdCampus(htmlString, index);
 			index += 2;//problemimnha
@@ -60,12 +60,10 @@ public class CampusController {
 			index++;
 			
 			urlName_campus = geraURLCampus(urlName_campus, id_campus);
-			
-			/*
-			System.out.println(id_campus);
-			System.out.println(nome_campus);
-			System.out.println(urlName_campus);
-			*/
+					
+//			System.out.println(id_campus);
+//			System.out.println(nome_campus);
+//			System.out.println(urlName_campus);
 			
 			htmlString=htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID); // se for -1 PARA

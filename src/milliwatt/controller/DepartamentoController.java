@@ -94,10 +94,9 @@ public class DepartamentoController {
 		site.connect();
 		
 		String htmlString = site.getOnlyHTML();
-		
+
 		while(index !=-1){
 
-			
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID);
 
 			sigla_departamento = capturaSiglaDepartamento(htmlString, index);
@@ -133,6 +132,7 @@ public class DepartamentoController {
 			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
 			departamentoList.add(departamento);
 			
+			departamento = null;
 			id_departamento="";
 			nome_departamento="";
 			urlName_departamento="";

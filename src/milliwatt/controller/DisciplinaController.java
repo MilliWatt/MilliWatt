@@ -12,12 +12,19 @@ public class DisciplinaController {
 		
 		Departamento departamento = null;
 		
-		for(int i = 0; i < departamentoList.size(); ){
-			if(departamentoList.get(i).getCodigo().equals(id_departamento)){
-				departamento = departamentoList.get(i);
-				break;
+		System.out.println(departamentoList.size());
+		
+//		for(int i = 0; i < departamentoList.size(); ){
+//			if(departamentoList.get(i).getCodigo().equals(id_departamento))
+//				departamento = departamentoList.get(i);
+//		}
+		
+		for(Departamento d : departamentoList){
+			if(d.getCodigo() == id_departamento){
+				departamento = d;
 			}
 		}
+		
 		return departamento;
 	}
 	
@@ -73,7 +80,11 @@ public class DisciplinaController {
 	public static ArrayList<Disciplina> getDisciplinaList(ArrayList<Departamento> departamentoList, String id_departamento){
 		
 		ArrayList<Disciplina> disciplinasList = new ArrayList<Disciplina>();
+		
 		Departamento departamentoDesejado = capturaDepartamentoDesejado(departamentoList, id_departamento);
+
+		
+			System.out.println(departamentoDesejado.getUrlName());
 		
 		String urlName_departamento = departamentoDesejado.getUrlName();
 		
@@ -89,9 +100,9 @@ public class DisciplinaController {
 		String nome_disciplina = "";
 		Disciplina disciplina = null;
 		int index = 0;
-		
+
 		while(index !=-1){
-			
+
 			index = htmlString.indexOf(Global.MW_DISCIPLINE_ID)+22;
 			
 			id_disciplina = capturaIDDisciplina(htmlString, index);
