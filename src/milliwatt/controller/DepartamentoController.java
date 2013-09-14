@@ -108,7 +108,11 @@ public class DepartamentoController {
 
 			id_departamento = capturaIDDepartamento(htmlString, index);
 
-			index += 4;//probleminha
+			if(sigla_departamento.length() == 2){
+				index += 3;//probleminha
+			}else{
+				index += 4;//probleminha
+			}
 		
 			nome_departamento = capturaNomeDepartamento(htmlString, index);
 			
@@ -116,11 +120,11 @@ public class DepartamentoController {
 			
 			urlName_departamento = geraURLDepartamento(id_departamento);
 			
-			/*System.out.println(id_departamento);
-			System.out.println(nome_departamento);
-			//System.out.println(sigla_departamento);
-			System.out.println(sigla_departamento_invertida);
-			System.out.println(urlName_departamento);*/
+//			System.out.println(id_departamento);
+//			System.out.println(nome_departamento);
+//			//System.out.println(sigla_departamento);
+//			System.out.println(sigla_departamento_invertida);
+//			System.out.println(urlName_departamento);
 			
 			
 			htmlString = htmlString.substring(index);// Parte a String
