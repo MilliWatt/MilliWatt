@@ -1,8 +1,8 @@
 package milliwatt.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
 import milliwatt.model.Disciplina;
 import milliwatt.model.Professor;
@@ -12,7 +12,7 @@ import milliwatt.utils.Global;
 
 public class TurmaController {
 	
-	public static String capturaTotalVagasDisciplina(String htmlString, int index){
+	public static String capturaTotalVagasTurma(String htmlString, int index){
 		
 		String total_vagas = "";
 		
@@ -25,7 +25,7 @@ public class TurmaController {
 		return total_vagas;
 	}
 	
-	public static String capturaVagasOcupadasDisciplina(String htmlString, int index){
+	public static String capturaVagasOcupadasTurma(String htmlString, int index){
 		
 		String vagas_ocupadas = "";
 		
@@ -38,7 +38,7 @@ public class TurmaController {
 		return vagas_ocupadas;
 	}
 	
-	public static String capturaVagasDisponiveisDisciplina(String htmlString, int index){
+	public static String capturaVagasDisponiveisTurma(String htmlString, int index){
 		
 		String vagas_disponiveis = "";
 		
@@ -51,24 +51,80 @@ public class TurmaController {
 		return vagas_disponiveis;
 	}
 	
-	public static ArrayList<String> divideStringDias(String inicioStringDias, String fimStringDias, String htmlString){
+	public static String[] capturaInformacoesDaTurma(String inicioStringDias, String fimStringDias, String htmlString){
 		
-		ArrayList<String> diasHorariosProfessoresLocalTurma = new ArrayList<String>();
+		String dia = "";
+		String local = "";
+		String horaFim = "";
+		String horaInicio = "";
+		String professor = "";
+		String[] informacoesDaTurma = new String[10];
+		
+		int fim = 0;
+		int inicio = 0;
+		String htmlStringPartida = "";
+		int indice = 0;
+		
+		do{
+			inicio = htmlString.indexOf(inicioStringDias);
+			fim = htmlString.indexOf(fimStringDias);
+			htmlStringPartida = htmlString.substring(inicio, fim);
+			
+			if(inicio == -1)
+				break;
+			
+			while (htmlStringPartida.charAt(inicio)!='>'){
+				inicio++;
+			}
+			
+			inicio+=3;
+			
+			while (htmlStringPartida.charAt(inicio)!='<'){
+				dia += htmlStringPartida.charAt(inicio);
+				inicio++;
+			}
+			
+			informacoesDaTurma[indice] = dia;
+			inicio += 33;
+			
+			while (htmlStringPartida.charAt(inicio) != '<'){
+				horaInicio += htmlStringPartida.charAt(inicio);
+				inicio++;
+			}
+			
+			informacoesDaTurma[indice] = horaInicio;
+			inicio += 33;
+			
+			while (htmlStringPartida.charAt(inicio) != '<'){
+				horaFim += htmlStringPartida.charAt(inicio);
+				inicio++;
+			}
+			informacoesDaTurma[indice] = horaFim;
+			inicio += 75;
+			
+			while (htmlStringPartida.charAt(inicio) != '<'){
+				local += htmlStringPartida.charAt(inicio);
+				inicio++;
+			}
+			informacoesDaTurma[indice] = local;
 
-		int inicio = htmlString.indexOf(inicioStringDias);
-		int fim = htmlString.indexOf(fimStringDias);
+			htmlStringPartida = htmlStringPartida.substring(inicio, fim);
+			
+		}while(inicio != fim);
 		
-		String htmlStringPartida = htmlString.substring(inicio, fim);
+		inicio = htmlStringPartida.indexOf("<center>")+8;
 		
-		while (htmlString.charAt(index)!='>'){
-			 += htmlStringPartida.charAt(index);
-			index++;
+		while(htmlStringPartida.charAt(inicio) != '<'){
+			professor += htmlStringPartida.charAt(inicio);
+			inicio++;
 		}
-	
-		return diasHorariosProfessoresLocalTurma;
+		
+		informacoesDaTurma[indice] = professor;
+		
+		return informacoesDaTurma;
 	}
 	
-	public static String capturaIdentificadorDisciplina(String htmlString, int index){
+	public static String capturaIdentificadorTurma(String htmlString, int index){
 		
 		String identificador = "";
 		
@@ -83,32 +139,25 @@ public class TurmaController {
 		
 	}
 	
-	public static String inverteSiglaDepartamento(String sigla_departamento){
-		
-		String sigla_departamento_invertida = "";
-		
-		for(int i = sigla_departamento.length(); i > 0; i--){
-			sigla_departamento_invertida += sigla_departamento.charAt(i-1);
-		}
-		
-		return sigla_departamento_invertida;
-	}
-	
 	public static Disciplina capturaDisciplinaDesejada(ArrayList<Disciplina> disciplinaList, String id_disciplina){
 		
 		Disciplina disciplina = null;
 		
-		for (Disciplina d : disciplinaList){
-			if (d.getCodigoDisciplina().equals(id_disciplina)){
+		for(Disciplina d : disciplinaList){
+			
+			System.out.println(d.getCodigoDisciplina());
+			
+			if(d.getCodigoDisciplina().equals(id_disciplina))
 				disciplina = d;
-			}
 		}
-		
+
 		return disciplina;
+		
 	}
+
 	
 	public static ArrayList<Turma> getTurmaList(ArrayList<Disciplina> disciplinaList, String id_disciplina){
-		
+
 		int index = 0;
 		String identificador = "";
 		String horarioInicio = "";
@@ -119,10 +168,17 @@ public class TurmaController {
 		ArrayList<Professor> professorList = new ArrayList<Professor>();
 		ArrayList<String> diaList = new ArrayList<String>();
 		ArrayList<Turma> turmaList = new ArrayList<Turma>();
+		String[] informacoesDaTurma = null;
+		Turma turma = null;
+		Professor professor = null;
 		
 		Disciplina disciplinaDesejada = capturaDisciplinaDesejada(disciplinaList, id_disciplina);
 		
+		//System.out.println(disciplinaDesejada.getUrlName());
+		
 		String urlName_disciplina = disciplinaDesejada.getUrlName();
+		
+		//System.out.println(urlName_disciplina);
 		
 		HttpsPage site = new HttpsPage(urlName_disciplina);
 		
@@ -134,40 +190,70 @@ public class TurmaController {
 
 			index = htmlString.indexOf(Global.MW_CLASS_ID);
 
-			identificador = capturaIdentificadorDisciplina(htmlString, index);
+			identificador = capturaIdentificadorTurma(htmlString, index);
 			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES);
 			
-			total_vagas = capturaTotalVagasDisciplina(htmlString, index);
+			total_vagas = capturaTotalVagasTurma(htmlString, index);
 			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_OCCUPIED);
 			
-			vagas_ocupadas = capturaVagasOcupadasDisciplina(htmlString, index);
+			vagas_ocupadas = capturaVagasOcupadasTurma(htmlString, index);
 			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_AVAILABLE);
 			
-			vagas_disponiveis = capturaVagasDisponiveisDisciplina(htmlString, index);
+			vagas_disponiveis = capturaVagasDisponiveisTurma(htmlString, index);
 			
-			divideStringDias(Global.MW_CLASS_DAYS_BEGIN, Global.MW_CLASS_DAYS_END, htmlString);
-
-			/*System.out.println(id_departamento);
-			System.out.println(nome_departamento);
-			//System.out.println(sigla_departamento);
-			System.out.println(sigla_departamento_invertida);
-			System.out.println(urlName_departamento);*/
+			informacoesDaTurma = capturaInformacoesDaTurma(Global.MW_CLASS_DAYS_BEGIN, Global.MW_CLASS_DAYS_END, htmlString);
+			
+			switch(informacoesDaTurma.length){
+			
+				case 4:
+					diaList.add(informacoesDaTurma[0]);
+					horarioInicio = informacoesDaTurma[1];
+					horarioFim = informacoesDaTurma[2];
+					professor = new Professor(informacoesDaTurma[3]);
+					professorList.add(professor);
+					break;
+				case 7:
+					diaList.add(informacoesDaTurma[0]);
+					horarioInicio = informacoesDaTurma[1];
+					horarioFim = informacoesDaTurma[2];
+					diaList.add(informacoesDaTurma[3]);
+					horarioInicio = informacoesDaTurma[4];
+					horarioFim = informacoesDaTurma[5];
+					professor = new Professor(informacoesDaTurma[6]);
+					professorList.add(professor);
+					break;
+				case 10:
+					diaList.add(informacoesDaTurma[0]);
+					horarioInicio = informacoesDaTurma[1];
+					horarioFim = informacoesDaTurma[2];
+					diaList.add(informacoesDaTurma[3]);
+					horarioInicio = informacoesDaTurma[4];
+					horarioFim = informacoesDaTurma[5];
+					diaList.add(informacoesDaTurma[6]);
+					horarioInicio = informacoesDaTurma[7];
+					horarioFim = informacoesDaTurma[8];
+					professor = new Professor(informacoesDaTurma[9]);
+					professorList.add(professor);
+					break;
+				
+			}
 			
 			index = htmlString.indexOf(Global.MW_CLASS_DAYS_END);
 			htmlString = htmlString.substring(index);// Parte a String
-			//index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID); // se for -1 PARA
 			
-			//departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
-			//departamentoList.add(departamento);
+			turma = new Turma(identificador, horarioInicio, horarioFim, total_vagas, vagas_disponiveis, vagas_ocupadas, diaList, professorList, disciplinaDesejada);
+			turmaList.add(turma);
 			
-//			id_departamento="";
-//			nome_departamento="";
-//			urlName_departamento="";
-//			sigla_departamento="";
-//			sigla_departamento_invertida="";
+			identificador = "";
+			horarioInicio = "";
+			horarioFim = "";
+			total_vagas = "";
+			vagas_disponiveis = "";
+			vagas_ocupadas = "";
+
 		}
 		
 		site.disconnect();
@@ -175,3 +261,4 @@ public class TurmaController {
 		return turmaList;
 	}
 }
+

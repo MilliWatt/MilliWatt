@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import milliwatt.controller.CampusController;
 import milliwatt.controller.DepartamentoController;
 import milliwatt.controller.DisciplinaController;
+import milliwatt.controller.TurmaController;
 import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
+import milliwatt.model.Disciplina;
 
 public class MainTeste {
 	public static void main(String args[]){
@@ -15,8 +17,9 @@ public class MainTeste {
 		//System.out.println(p.toString());
 
 		ArrayList<Campus> campusList = CampusController.getCampusList();		
-		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "1");		
-		DisciplinaController.getDisciplinaList(departamentoList, "113");
+		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");		
+		ArrayList<Disciplina> disciplinaList = DisciplinaController.getDisciplinaList(departamentoList, "650");
+		TurmaController.getTurmaList(disciplinaList, "193640");
 		
 		
 		

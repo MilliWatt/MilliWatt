@@ -104,9 +104,9 @@ public class DisciplinaController {
 			
 			urlName_disciplina = geraURLDisciplina(id_disciplina, id_departamento);
 			
-			System.out.println(id_disciplina);
-			System.out.println(nome_disciplina);
-			System.out.println(urlName_disciplina);
+//			System.out.println(id_disciplina);
+//			System.out.println(nome_disciplina);
+//			System.out.println(urlName_disciplina);
 			
 			htmlString = htmlString.substring(index);
 			
