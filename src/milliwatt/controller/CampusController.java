@@ -65,7 +65,7 @@ public class CampusController {
 //			System.out.println(nome_campus);
 //			System.out.println(urlName_campus);
 			
-			htmlString=htmlString.substring(index);// Parte a String
+			htmlString = htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_CAMPUS_ID); // se for -1 PARA
 			
 			campus = new Campus(id_campus, nome_campus, urlName_campus);

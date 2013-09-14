@@ -12,6 +12,7 @@ public class Turma {
 	private String total_vagas;
 	private String vagas_disponiveis;
 	private String vagas_ocupadas;
+	private ArrayList<String> local;
 	private ArrayList<String> diasTurma;
 	private ArrayList<Professor> listaProfessores;
 	private Disciplina disciplina;
@@ -22,7 +23,7 @@ public class Turma {
 
 	public Turma(String identificador, String horarioInicioTurma,String horarioFimTurma, String total_vagas, 
 			String vagas_disponiveis,String vagas_ocupadas, ArrayList<String> diasTurma,
-			ArrayList<Professor> listaProfessores, Disciplina disciplina) {
+			ArrayList<Professor> listaProfessores, Disciplina disciplina, ArrayList<String> local) {
 		this.identificador = identificador;
 		this.horarioInicioTurma = horarioInicioTurma;
 		this.horarioFimTurma = horarioFimTurma;
@@ -32,6 +33,7 @@ public class Turma {
 		this.diasTurma = diasTurma;
 		this.listaProfessores = listaProfessores;
 		this.disciplina = disciplina;
+		this.local = local;
 //		try {
 //			this.url = new URL(urlName);
 //		} catch (MalformedURLException e) {
@@ -62,9 +64,17 @@ public class Turma {
 //	public void setUrl(URL url) {
 //		this.url = url;
 //	}
-
+	
 	public String getTotal_vagas() {
 		return total_vagas;
+	}
+
+	public ArrayList<String> getLocal() {
+		return local;
+	}
+
+	public void setLocal(ArrayList<String> local) {
+		this.local = local;
 	}
 
 	public void setTotal_vagas(String total_vagas) {
