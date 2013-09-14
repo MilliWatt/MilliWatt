@@ -11,18 +11,10 @@ public class DisciplinaController {
 	public static Departamento capturaDepartamentoDesejado(ArrayList<Departamento> departamentoList, String id_departamento){
 		
 		Departamento departamento = null;
-		
-		System.out.println(departamentoList.size());
-		
-//		for(int i = 0; i < departamentoList.size(); ){
-//			if(departamentoList.get(i).getCodigo().equals(id_departamento))
-//				departamento = departamentoList.get(i);
-//		}
-		
+
 		for(Departamento d : departamentoList){
-			if(d.getCodigo() == id_departamento){
+			if(d.getCodigo().equals(id_departamento))
 				departamento = d;
-			}
 		}
 		
 		return departamento;
@@ -83,9 +75,6 @@ public class DisciplinaController {
 		
 		Departamento departamentoDesejado = capturaDepartamentoDesejado(departamentoList, id_departamento);
 
-		
-			System.out.println(departamentoDesejado.getUrlName());
-		
 		String urlName_departamento = departamentoDesejado.getUrlName();
 		
 		HttpsPage site = new HttpsPage(urlName_departamento);
@@ -115,13 +104,13 @@ public class DisciplinaController {
 			
 			urlName_disciplina = geraURLDisciplina(id_disciplina, id_departamento);
 			
-			//System.out.println(id_departamento);
 			System.out.println(id_disciplina);
 			System.out.println(nome_disciplina);
 			System.out.println(urlName_disciplina);
 			
-			htmlString = htmlString.substring(index);// Parte a String
-			index = htmlString.indexOf(Global.MW_DISCIPLINE_ID); // se for -1 PARA
+			htmlString = htmlString.substring(index);
+			
+			index = htmlString.indexOf(Global.MW_DISCIPLINE_ID);
 			
 			disciplina = new Disciplina(id_disciplina, nome_disciplina, urlName_disciplina);
 			disciplinasList.add(disciplina);

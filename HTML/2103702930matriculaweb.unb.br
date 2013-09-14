@@ -1,0 +1,201 @@
+
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<script language="JavaScript">
+	ie =  document.all ? true : false;
+	NS4 = (document.layers);
+	IE4 = (document.all);
+	ver4 = (NS4 || IE4);
+	IE5 = (IE4 && navigator.appVersion.indexOf("5.")!=-1);
+	isMac = (navigator.appVersion.indexOf("Mac") != -1);
+	isMenu = (NS4 || (IE4 && !isMac) || (IE5 && isMac));
+	if (!ver4) event=null; 
+	var netscape   = (navigator.appName.indexOf("Netscape") >= 0 && parseFloat(navigator.appVersion) >= 4) ? true : false;
+	var explorer   = (document.all) ? true : false;
+</script>
+<script language="javascript" src="/matriculaweb/script/form.js"></script>
+<head>
+	<title>UnB - Matrícula Web
+		
+		-
+		Relação de disciplinas ofertadas
+		
+	</title>
+	<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+	<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+	<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+	<meta name="vs_defaultClientScript" content="JavaScript">
+	<meta name="vs_targetSchema" content="">
+	<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+</head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<body background="/matriculaweb/imagens/fundo_main.gif" leftmargin="0" topmargin="0" ms_positioning="GridLayout">
+<center>
+<br>
+<table cellpadding="0" cellspacing="0" border="0" width="760" class="padrao">
+<tr><td><!-- TABELA GLOBAL -->
+
+
+	<!-- LOGOTIPOS -->
+	<table width="760" border="0" cellspacing="0" cellpadding="0" class="Padrao">
+		<tr>
+			<td background=/matriculaweb/imagens/fundotopo_esq.gif  height="87" align="center" valign="middle" width="20">
+			</td>
+			<td background=/matriculaweb/imagens/fundotopo.gif  height="" align="center" valign="middle" width=100>
+				<a href="/matriculaweb/" />
+					<img border="0" src="/matriculaweb/imagens/logo_unb.gif" vspace="4" align="absmiddle" alt="Clique para ir ao início">
+				</a>
+			</td>
+			<td background=/matriculaweb/imagens/fundotopo.gif align="left" valign="middle" class="PadraoMenor" nowrap>
+				<b>Universidade de Brasília - UnB</b>
+				<br>
+				Decanato de Ensino de Graduação - DEG
+				<br>
+				Secretaria de Administração Acadêmica - SAA
+			
+			</td>
+			
+			<td background=/matriculaweb/imagens/fundotopo.gif  height="87" align="center" valign="middle">
+			<img border=0 src="/matriculaweb/imagens/new_logo_unb.gif" alt="MatrículaWeb">
+			<br><font size=1 color=#779a56><B>GRADUAÇÃO</b></font>
+			</td>
+			<td background=/matriculaweb/imagens/fundotopo_dir.gif  height="87" align="center" valign="middle" width="20">
+			
+			</td>
+		</tr>
+		</table>
+		
+		
+		<!-- LOGIN... INFORMACOES -->
+		<table width="760" border="0" cellspacing="0" cellpadding="0" class="PadraoMenor">
+		<tr>
+			<td background=/matriculaweb/imagens/fundo_base_esq.gif  height="84" align="center" valign="middle" width="10">
+			</td>
+
+			<td  background=/matriculaweb/imagens/fundo_base.gif class="PadraoMenor" bgcolor="#748A65" width=370 align="left">
+			
+				
+				&nbsp; <b>Seja bem-vindo(a).</b><br>
+				&nbsp; Para ter acesso ao menu de Aluno, faça o login.<br>
+					
+						<a href="https://wwwsec.serverweb.unb.br/matriculaweb/graduacao/sec/login.aspx">
+						<b><img border=0 src="/matriculaweb/imagens/act.gif" align=absmiddle alt="MatrículaWeb">&nbsp; clique aqui para fazer o login</b></a>.
+					
+			</td>
+			<td background=/matriculaweb/imagens/fundo_base.gif class="padraomenor" bgcolor="#334026" align="left" width=370>
+				
+					&nbsp;
+				
+			</td>
+
+			<td background=/matriculaweb/imagens/fundo_base_dir.gif align="center" valign="middle" width="10">
+			
+			</td>
+
+		</tr>
+
+	</table>
+
+	
+	<!-- PER�?ODO -->
+	<table width="760" border="0" cellspacing="0" cellpadding="0" class="PadraoMenor">
+		<tr>
+			<td background="/matriculaweb/imagens/efeito_fundo.jpg" class="Padrao"valign="top" align="left">
+				<table width="100%" border="0">
+					<tr>
+						<td width="125" valign="middle" height="55" class=padraomenor>
+							<center><br><br><b>Período Atual</b></center>
+							<center>2013/2</center>
+						</td>
+						<td class="padrao" align="center" valign="middle">
+							<h4>
+								<br>
+								Relação de disciplinas ofertadas
+								
+							</h4>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<!-- TABELA MEIO -->
+	<table width="760" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td background="/matriculaweb/imagens/fundo_deg.jpg" width=140 align="left" valign=top>	
+			<font class=Padrao>
+				
+
+<b>
+<center>Graduação</center>
+</b>
+
+<font class=PadraoMenu>
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href=/matriculaweb/graduacao/curso_campus.aspx>Curso</a>
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href=/matriculaweb/graduacao/oferta_campus.aspx>Oferta</a>
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href="http://www.unb.br/administracao/secretarias/saa/telefones.php" target=_blank>Telefones</a>
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href="http://www.unb.br/administracao/secretarias/saa/calendarios.php" target=_blank>Calendário</a>
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href="/matriculaweb/graduacao/default.aspx">Mensagem da SAA</a> 
+<br><img src=/matriculaweb/imagens/vazio.gif width=15><img border=0 src=/matriculaweb/imagens/ponto.gif>  <a href="https://www.saeweb.unb.br/saeweb/fronteira/editais/EditalAtual.pdf" target=_blank>Benefícios DAC</a>
+</font>
+ 
+
+</font>
+<br>
+<br>
+
+
+
+
+
+<font color=black class=padrao>
+<form onsubmit="CriticarCampos(formdis);" method=post name=formdis ID=formdis autocomplete=on action="/matriculaweb/graduacao/oferta_dis.aspx">
+<center><b>Busca</b><br>Disciplinas<br>
+<INPUT value='' type='text' Obr=1 size=11 Exemplo='' TamanhoMinimo=4 Tag='Disciplina' MaxLength=50 TamanhoMaximo=16 id=BuscaDisNome Name="BuscaDisNome">
+<br><INPUT type=submit value=" Ok " CLASS=FORM>
+</form></center>
+
+</font>
+
+
+
+<!-- TABELA MEIO -->
+</font> </TD>
+<TD width="620" background="/matriculaweb/imagens/efeito_fundo2.jpg" class="padrao" valign="top" align="left" class="padrao">
+<div style='padding:5px'>
+
+<center>
+	<h5>Centro de Excelência em Turismo</h5>31 disciplinas existentes<br><br><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Denominação</b></td><td><b>Ementa</b></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>206431</b></td><td><a href=oferta_dados.aspx?cod=206431&dep=039>COMUNICAÇÃO NO TURISMO</a></td><td><a title='COMUNICAÇÃO NO TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=206431><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>203513</b></td><td><a href=oferta_dados.aspx?cod=203513&dep=039>CONSTRUÇÃO DO CONHECIMENTO CIENT�?FICO</a></td><td><a title='CONSTRUÇÃO DO CONHECIMENTO CIENT�?FICO' href=/matriculaweb/graduacao/disciplina.aspx?cod=203513><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>102997</b></td><td><a href=oferta_dados.aspx?cod=102997&dep=039>ENOTURISMO</a></td><td><a title='ENOTURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=102997><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>208779</b></td><td><a href=oferta_dados.aspx?cod=208779&dep=039>EQUIPAMENTOS E SERVIÇOS TURISTICOS - EVENTOS</a></td><td><a title='EQUIPAMENTOS E SERVIÇOS TURISTICOS - EVENTOS' href=/matriculaweb/graduacao/disciplina.aspx?cod=208779><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>208744</b></td><td><a href=oferta_dados.aspx?cod=208744&dep=039>EQUIPAMENTOS E SERVIÇOS TURISTICOS - HOSPEDAGEM</a></td><td><a title='EQUIPAMENTOS E SERVIÇOS TURISTICOS - HOSPEDAGEM' href=/matriculaweb/graduacao/disciplina.aspx?cod=208744><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>208752</b></td><td><a href=oferta_dados.aspx?cod=208752&dep=039>EQUIPAMENTOS E SERVIÇOS TURISTICOS - LAZER</a></td><td><a title='EQUIPAMENTOS E SERVIÇOS TURISTICOS - LAZER' href=/matriculaweb/graduacao/disciplina.aspx?cod=208752><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>208787</b></td><td><a href=oferta_dados.aspx?cod=208787&dep=039>EQUIPAMENTOS E SERVIÇOS TURISTICOS -ALIMENTAÇÃO</a></td><td><a title='EQUIPAMENTOS E SERVIÇOS TURISTICOS -ALIMENTAÇÃO' href=/matriculaweb/graduacao/disciplina.aspx?cod=208787><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>208761</b></td><td><a href=oferta_dados.aspx?cod=208761&dep=039>EQUIPAMENTOS E SERVIÇOS TURISTICOS-AGENCIAMENTO OPERAÇÃO E TRANSPORTE</a></td><td><a title='EQUIPAMENTOS E SERVIÇOS TURISTICOS-AGENCIAMENTO OPERAÇÃO E TRANSPORTE' href=/matriculaweb/graduacao/disciplina.aspx?cod=208761><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>101052</b></td><td><a href=oferta_dados.aspx?cod=101052&dep=039>EST�?GIO SUPERVISIONADO 1</a></td><td><a title='EST�?GIO SUPERVISIONADO 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=101052><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>102971</b></td><td><a href=oferta_dados.aspx?cod=102971&dep=039>EST�?GIO SUPERVISIONADO 2</a></td><td><a title='EST�?GIO SUPERVISIONADO 2' href=/matriculaweb/graduacao/disciplina.aspx?cod=102971><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>104621</b></td><td><a href=oferta_dados.aspx?cod=104621&dep=039>ESTRUTURAÇÃO E PROMOÇÃO DE DESTINOS</a></td><td><a title='ESTRUTURAÇÃO E PROMOÇÃO DE DESTINOS' href=/matriculaweb/graduacao/disciplina.aspx?cod=104621><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>206440</b></td><td><a href=oferta_dados.aspx?cod=206440&dep=039>ESTRUTURAS DE SUPORTE AO TURISMO</a></td><td><a title='ESTRUTURAS DE SUPORTE AO TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=206440><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>200905</b></td><td><a href=oferta_dados.aspx?cod=200905&dep=039>ESTUDO DO TURISMO 1</a></td><td><a title='ESTUDO DO TURISMO 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=200905><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>203505</b></td><td><a href=oferta_dados.aspx?cod=203505&dep=039>ESTUDO DO TURISMO 2</a></td><td><a title='ESTUDO DO TURISMO 2' href=/matriculaweb/graduacao/disciplina.aspx?cod=203505><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>206423</b></td><td><a href=oferta_dados.aspx?cod=206423&dep=039>ESTUDO DO TURISMO 3</a></td><td><a title='ESTUDO DO TURISMO 3' href=/matriculaweb/graduacao/disciplina.aspx?cod=206423><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>102954</b></td><td><a href=oferta_dados.aspx?cod=102954&dep=039>FUNDAMENTOS DE ESTAT�?STICA APLICADO AO TURISMO</a></td><td><a title='FUNDAMENTOS DE ESTAT�?STICA APLICADO AO TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=102954><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>101044</b></td><td><a href=oferta_dados.aspx?cod=101044&dep=039>LEGISLAÇÃO TUR�?STICA</a></td><td><a title='LEGISLAÇÃO TUR�?STICA' href=/matriculaweb/graduacao/disciplina.aspx?cod=101044><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>104612</b></td><td><a href=oferta_dados.aspx?cod=104612&dep=039>PESQUISA EM TURISMO</a></td><td><a title='PESQUISA EM TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=104612><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>101036</b></td><td><a href=oferta_dados.aspx?cod=101036&dep=039>PLANEJAMENTO E GESTÃO EM TURISMO 1</a></td><td><a title='PLANEJAMENTO E GESTÃO EM TURISMO 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=101036><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>102946</b></td><td><a href=oferta_dados.aspx?cod=102946&dep=039>PLANEJAMENTO E GESTÃO EM TURISMO 2</a></td><td><a title='PLANEJAMENTO E GESTÃO EM TURISMO 2' href=/matriculaweb/graduacao/disciplina.aspx?cod=102946><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>104655</b></td><td><a href=oferta_dados.aspx?cod=104655&dep=039>PLANEJAMENTO E ORGANIZAÇÃO DE EVENTOS</a></td><td><a title='PLANEJAMENTO E ORGANIZAÇÃO DE EVENTOS' href=/matriculaweb/graduacao/disciplina.aspx?cod=104655><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>104647</b></td><td><a href=oferta_dados.aspx?cod=104647&dep=039>POÉTICAS DA VIAGEM: ARTE CINEMA LITERATURA E TURISMO</a></td><td><a title='POÉTICAS DA VIAGEM: ARTE CINEMA LITERATURA E TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=104647><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>203572</b></td><td><a href=oferta_dados.aspx?cod=203572&dep=039>PROJETO INTEGRADOR EM TURISMO 1</a></td><td><a title='PROJETO INTEGRADOR EM TURISMO 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=203572><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>208795</b></td><td><a href=oferta_dados.aspx?cod=208795&dep=039>PROJETO INTEGRADOR EM TURISMO 2</a></td><td><a title='PROJETO INTEGRADOR EM TURISMO 2' href=/matriculaweb/graduacao/disciplina.aspx?cod=208795><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>102962</b></td><td><a href=oferta_dados.aspx?cod=102962&dep=039>PROJETO INTEGRADOR EM TURISMO 3</a></td><td><a title='PROJETO INTEGRADOR EM TURISMO 3' href=/matriculaweb/graduacao/disciplina.aspx?cod=102962><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>206458</b></td><td><a href=oferta_dados.aspx?cod=206458&dep=039>SEMIN�?RIOS EM TURISMO 1</a></td><td><a title='SEMIN�?RIOS EM TURISMO 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=206458><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>102989</b></td><td><a href=oferta_dados.aspx?cod=102989&dep=039>SEMIN�?RIOS EM TURISMO 2</a></td><td><a title='SEMIN�?RIOS EM TURISMO 2' href=/matriculaweb/graduacao/disciplina.aspx?cod=102989><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>104639</b></td><td><a href=oferta_dados.aspx?cod=104639&dep=039>SEMIN�?RIOS EM TURISMO 3</a></td><td><a title='SEMIN�?RIOS EM TURISMO 3' href=/matriculaweb/graduacao/disciplina.aspx?cod=104639><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>200913</b></td><td><a href=oferta_dados.aspx?cod=200913&dep=039>SUSTENTABILIDADE ÉTICA E TURISMO</a></td><td><a title='SUSTENTABILIDADE ÉTICA E TURISMO' href=/matriculaweb/graduacao/disciplina.aspx?cod=200913><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=#E7F3D6><td class=Padrao><b>104671</b></td><td><a href=oferta_dados.aspx?cod=104671&dep=039>TÓPICOS ESPECIAIS EM GASTRONOMIA 1</a></td><td><a title='TÓPICOS ESPECIAIS EM GASTRONOMIA 1' href=/matriculaweb/graduacao/disciplina.aspx?cod=104671><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr><tr CLASS=PadraoMenor bgcolor=white><td class=Padrao><b>104663</b></td><td><a href=oferta_dados.aspx?cod=104663&dep=039>TURISMO RURAL</a></td><td><a title='TURISMO RURAL' href=/matriculaweb/graduacao/disciplina.aspx?cod=104663><img src=/matriculaweb/imagens/livro.gif border=0 vspace=0></a></td></tr></table>
+</center>
+
+
+</div>
+</TD>
+</TR>
+</TABLE>
+<!-- FIM TABELA MEIO -->
+
+
+
+<TABLE WIDTH="760" BORDER="0" CELLSPACING="0" cellpadding=0>
+	<TR>
+		<td background=/matriculaweb/imagens/footer_esq.gif width=10 height=44 >
+		</td>
+		<TD class="FundoVerde" align="center" background=/matriculaweb/imagens/footer.gif>
+			<font size=1>
+				© 2013 CPD - Centro de Informática<br><b>UnB - Universidade de Brasília</b>
+			</font>
+		</TD>
+		<td background=/matriculaweb/imagens/footer_dir.gif width=10>
+		</td>
+</TABLE>
+</center>
+
+
+</td></tr></table><!-- FIM TABELA GLOBAL -->
+</body>
+<br><br>
+</html>
+

@@ -7,8 +7,6 @@ import milliwatt.controller.DepartamentoController;
 import milliwatt.controller.DisciplinaController;
 import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
-import milliwatt.model.Disciplina;
-
 
 public class MainTeste {
 	public static void main(String args[]){
@@ -18,7 +16,7 @@ public class MainTeste {
 
 		ArrayList<Campus> campusList = CampusController.getCampusList();		
 		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "1");		
-		DisciplinaController.getDisciplinaList(departamentoList, "025");
+		DisciplinaController.getDisciplinaList(departamentoList, "039");
 		
 		
 		
