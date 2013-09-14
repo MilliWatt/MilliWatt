@@ -13,6 +13,7 @@ public class Global {
 	public static final String MW_CAMPUS = MW_GRADUATE + "oferta_campus.aspx";//obter lista de campus
 	public static final String MW_CAMPUS_ID = "cod=";//utilizado para parse de campus
 	public static final String MW_DEPARTAMENT_ID = "cod=";
+	public static final String MW_DISCIPLINE_ID = "oferta_dados.aspx?cod=";
 	
 
 	public static final int DAR_CODE_ID = 1;
@@ -26,10 +27,8 @@ public class Global {
 	public static final String MW_DISCIPLINE =  MW_GRADUATE + "oferta_dis.aspx?cod=";//obter lista de disciplinas e seus codigos.
 	
 	// obter lista de turmas e informações de horarios e professores e etc
-	public static final String MW_CLASS = MW_GRADUATE + "oferta_dados.aspx?cod=" +/*CODIGO DISCI*/ "&dep=";/*COD_DEP */ 	
+	public static final String MW_CLASS_DISCIPLINE = MW_GRADUATE + "oferta_dados.aspx?cod=";
+	public static final String MW_CLASS_DEPARTMENT = "&dep="; 	
 	
-	
-	
-	
-	
+		
 }

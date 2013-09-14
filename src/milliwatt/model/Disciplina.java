@@ -6,20 +6,18 @@ import java.util.ArrayList;
 
 public class Disciplina {
 
-	private int codigoDisciplina;
+	private String codigoDisciplina;
 	private String nomeDisciplina;
 	private String urlName;
 	private URL url;
-	ArrayList<Turma> turmasDisciplina;
 
 	public Disciplina(){
 		
 	}
 	
-	public Disciplina(int codigoDisciplina, String nomeDisciplina, ArrayList<Professor> professoresDisciplina) {
+	public Disciplina(String codigoDisciplina, String nomeDisciplina, String urlName) {
 		this.codigoDisciplina = codigoDisciplina;
 		this.nomeDisciplina = nomeDisciplina;
-		this.turmasDisciplina = new ArrayList<Turma>();
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {
@@ -43,11 +41,11 @@ public class Disciplina {
 		this.url = url;
 	}
 	
-	public int getCodigoDisciplina() {
+	public String getCodigoDisciplina() {
 		return codigoDisciplina;
 	}
 
-	public void setCodigoDisciplina(int codigoDisciplina) {
+	public void setCodigoDisciplina(String codigoDisciplina) {
 		this.codigoDisciplina = codigoDisciplina;
 	}
 
@@ -59,12 +57,5 @@ public class Disciplina {
 		this.nomeDisciplina = nomeDisciplina;
 	}
 	
-	public ArrayList<Turma> getTurmasDisciplina() {
-		return turmasDisciplina;
-	}
-
-	public void setTurmasDisciplina(ArrayList<Turma> turmasDisciplina) {
-		this.turmasDisciplina = turmasDisciplina;
-	}
 	
 }

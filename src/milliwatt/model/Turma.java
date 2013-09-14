@@ -1,5 +1,7 @@
 package milliwatt.model;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class Turma {
@@ -12,11 +14,15 @@ public class Turma {
 	private int vagas_ocupadas;
 	private ArrayList<String> diasTurma;
 	private ArrayList<Professor> listaProfessores;
-	
+	private Disciplina disciplina;
+	private String urlName;
+	private URL url;
+
 	public Turma(){}
 
 	public Turma(String identificador, String horarioInicioTurma,String horarioFimTurma, int total_vagas, 
-			int vagas_disponiveis,int vagas_ocupadas, ArrayList<String> diasTurma,ArrayList<Professor> listaProfessores) {
+			int vagas_disponiveis,int vagas_ocupadas, ArrayList<String> diasTurma,
+			ArrayList<Professor> listaProfessores, Disciplina disciplina) {
 		this.identificador = identificador;
 		this.horarioInicioTurma = horarioInicioTurma;
 		this.horarioFimTurma = horarioFimTurma;
@@ -25,6 +31,36 @@ public class Turma {
 		this.vagas_ocupadas = vagas_ocupadas;
 		this.diasTurma = diasTurma;
 		this.listaProfessores = listaProfessores;
+		this.disciplina = disciplina;
+		try {
+			this.url = new URL(urlName);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public String getUrlName() {
+		return urlName;
+	}
+
+	public void setUrlName(String urlName) {
+		this.urlName = urlName;
+	}
+
+	public URL getUrl() {
+		return url;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
 	}
 
 	public int getTotal_vagas() {

@@ -116,22 +116,22 @@ public class DepartamentoController {
 			
 			urlName_departamento = geraURLDepartamento(id_departamento);
 			
-			System.out.println(id_departamento);
+			/*System.out.println(id_departamento);
 			System.out.println(nome_departamento);
 			//System.out.println(sigla_departamento);
 			System.out.println(sigla_departamento_invertida);
-			System.out.println(urlNameDepartamento);
+			System.out.println(urlName_departamento);*/
 			
 			
 			htmlString = htmlString.substring(index);// Parte a String
 			index = htmlString.indexOf(Global.MW_DEPARTAMENT_ID); // se for -1 PARA
 			
-			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlNameDepartamento);
+			departamento = new Departamento(id_departamento, nome_departamento, sigla_departamento_invertida, urlName_departamento);
 			departamentoList.add(departamento);
 			
 			id_departamento="";
 			nome_departamento="";
-			urlNameDepartamento="";
+			urlName_departamento="";
 			sigla_departamento="";
 			sigla_departamento_invertida="";
 		}
