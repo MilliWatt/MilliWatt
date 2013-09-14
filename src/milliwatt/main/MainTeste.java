@@ -6,8 +6,8 @@ import milliwatt.controller.CampusController;
 import milliwatt.controller.DepartamentoController;
 import milliwatt.controller.DisciplinaController;
 import milliwatt.model.Campus;
-import milliwatt.model.page.Page;
 import milliwatt.model.Departamento;
+import milliwatt.model.Disciplina;
 
 
 public class MainTeste {
@@ -16,9 +16,10 @@ public class MainTeste {
 		//Page p =  Page.getPage("http:\\www.google.com");		
 		//System.out.println(p.toString());
 
-		ArrayList<Campus> campusList = CampusController.getCampusList();
-		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");
-		DisciplinaController.getDisciplinaList(departamentoList, "650");	
+		ArrayList<Campus> campusList = CampusController.getCampusList();		
+		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");		
+		DisciplinaController.getDisciplinaList(departamentoList, "650");
+		
 		
 		/*
 		File file = new File("./teste");
