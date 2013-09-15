@@ -16,7 +16,7 @@ public class Global {
 	public static final String MW_DEPARTAMENT_ID = "cod=";
 	public static final String MW_DISCIPLINE_ID = "oferta_dados.aspx?cod=";
 	public static final String MW_DISCIPLINE_PRE_REQ_ID = "-req:";
-	public static final String MW_CLASS_ID ="<font-size=4><b>";
+	public static final String MW_CLASS_ID ="<font size=4><b>";
 	public static final String MW_CLASS_VACANCIES ="Vagas:";
 	public static final String MW_CLASS_VACANCIES_OCCUPIED ="Ocup.:";
 	public static final String MW_CLASS_VACANCIES_AVAILABLE = "Disp.:";
