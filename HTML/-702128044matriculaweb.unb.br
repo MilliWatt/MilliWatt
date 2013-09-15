@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>UnB - Matrícula Web -
+			Disciplina: Ementa/Programa
+		</title>
+		<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+		<Script language="javascript" src="/matriculaweb/script/form.js"></Script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="">
+		<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body class="padrao" background="/matriculaweb/imagens/fundo_main.gif" leftMargin="0" topMargin="0">
+		<center>
+
+			<br>
+			<img border="0" src="/matriculaweb/imagens/logopadraounb3.jpg" align="absmiddle">
+			<br><b>Disciplina: Ementa/Programa</b>
+			<br><A HREF="Javascript:window.close();">FECHAR JANELA</a>
+			<table width=100% cellpadding="10" cellspacing="0" id="TabelaPai" border="0">
+				<tr>
+					<td align="center" width="100%">
+						<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=3 Class=FrameCinza><tr CLASS=padrao bgcolor=white><td><b>Órgão:</b> </td><td>MAT - Departamento de Matemática.</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Código:</b> </td><td>113034</td></tr><tr CLASS=padrao bgcolor=white><td><b>Denominação:</b> </td><td>Calculo 1</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Nível:</b> </td><td>Graduação</td></tr><tr CLASS=padrao bgcolor=white><td><b>Vigência:</b> </td><td>1962/1</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Pré-req:</b> </td><td class=PadraoMenor>Disciplina sem pré-requisitos</td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Ementa:</b> </td><td class=PadraoMenor><p align=justify>- FUNCAO DE UMA VARIAVEL REAL.                                          <br /><br />- LIMITES.                                                              <br /><br />- CONTINUIDADE.                                                         <br /><br />- DERIVADA.                                                             <br /><br />- INTEGRAL.                                                             <br /><br /></P></td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Programa:</b> </td><td class=PadraoMenor><p align=justify>1. Funções: conceito de função; exemplo de funções de uma variável real; tipos de funções; gráficos; função composta; função inversa; funções trigonométricas e suas inversas; função exponencial; função logaritmo<br /><br /><br /><br />2. Limite e continuidade: conceito de limite; propriedades dos limites; limites laterais; limites envolvendo o infinito; continuidade; Teorema do Valor Intermediário<br /><br /><br /><br />3. Derivadas: conceito de derivada; reta tangente e reta normal; derivadas laterais; regras básicas de derivação; regra da cadeia; taxas relacionadas; derivada da função inversa; derivação implícita; comportamento de funções; máximos e mínimos; Teorema do Valor Médio; regras de l’Hospital; concavidade, inflexão e gráficos; problemas de otimização<br /><br /><br /><br />4. Integrais: primitivas; integrais indefinidas e suas propriedades; integral definida e suas propriedades; Teorema Fundamental do Cálculo; integração por substituição; integração por partes; integração por frações parciais; integração de produtos de funções trigonométricas; integração por substituição inversa; integração por substituições especiais.<br /><br /><br /><br />5. Aplicações da integral: aplicações da integral ao cálculo de áreas planas, comprimento de curvas, volumes e áreas de sólidos.</P></td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Bibliografia:</b> </td><td class=PadraoMenor><p align=justify>Bibliografia Básica:<br /><br /> <br /><br />G.B. THOMAS, 11a ed.<br /><br />C�?LCULO - VOLUME 1<br /><br />Pearson Education do Brasil.<br /><br /> <br /><br />J. STEWART, 5a ed.<br /><br />C�?LCULO - VOLUME 1<br /><br />Pioneira/Thomson Learning.<br /><br /> <br /><br /><br /><br />Bibliografia Comlementar:<br /><br /> <br /><br />H. L. GUIDORIZZI, 5a ed.<br /><br />Um curso de cálculo, vol. 1.  <br /><br />LTC, 2001.<br /><br /> <br /><br />G.S.S. AVILA, 4ª ed.<br /><br />Cálculo 1<br /><br />LTC<br /><br /> <br /><br />MUNEN-FOULIS<br /><br />Cálculo – Vol. 1<br /><br />Guanabara Dois<br /><br /> <br /><br />S. LANG, 1a ed.<br /><br />Cálculo de uma variável<br /><br />LTC<br /><br /><br /><br />DEMIDOVICH<br /><br />Problemas e exercícios de análise. <br /><br />Ed. MIR.<br /><br /></P></td></tr></table></center>
+					</td>
+				</tr>
+			</table>
+			<b>© 2004-2013 CPD - Centro de Informática<br>UnB - Universidade de Brasília</b>
+			<br><br>
+		</center>
+	</body>
+</HTML>

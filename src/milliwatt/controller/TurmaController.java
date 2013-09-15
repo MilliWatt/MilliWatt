@@ -189,11 +189,40 @@ public class TurmaController {
 		return Global.MW_DISCIPLINE_PRE_REQ + codigoDisciplina;
 	}
 	
-	public static ArrayList<String> capturaPreRequisitosDisciplinaDesejada(Disciplina disciplinaDesejada){
+	public static Disciplina criaDisciplinaPreReq(String informacoes){
 		
-		ArrayList<String> preRequisitosList = new ArrayList<String>();
+		Disciplina disciplina = null;
+		String codigoDisciplinaPreReq = "";
+		String nomeDisciplina = "";
+		int index = 0;
+		
+		while (informacoes.charAt(index)!= '-')
+			index++;
+		
+		
+		while (informacoes.charAt(index)!= ' '){
+			codigoDisciplinaPreReq += informacoes.charAt(index);
+			index++;
+		}
+		
+		while (index!= informacoes.length()){
+			nomeDisciplina += informacoes.charAt(index);
+			index++;
+		}
+		
+		disciplina = new Disciplina(codigoDisciplinaPreReq, nomeDisciplina);
+		
+		return disciplina;
+		
+	}
+	
+	public static ArrayList<Disciplina> capturaPreRequisitosDisciplinaDesejada(Disciplina disciplinaDesejada){
+		
+		ArrayList<Disciplina> preRequisitosList = new ArrayList<Disciplina>();
+		Disciplina d = null;
 		String pre_req = "";
 		String auxiliar = "";
+		
 		String codigoDisciplina = disciplinaDesejada.getCodigoDisciplina();
 		int index = 0;
 		
@@ -213,7 +242,10 @@ public class TurmaController {
 				index++;
 			}
 			System.out.println(pre_req);
-			preRequisitosList.add(pre_req);
+			
+			d = criaDisciplinaPreReq(pre_req);
+			
+			preRequisitosList.add(d);
 			
 			auxiliar = htmlString.substring(index, index+5);
 					
@@ -222,6 +254,7 @@ public class TurmaController {
 			}else{
 				index+=4;
 			}
+			pre_req = "";
 		}
 		
 		site.disconnect();
@@ -249,14 +282,13 @@ public class TurmaController {
 		
 		Disciplina disciplinaDesejada = capturaDisciplinaDesejada(disciplinaList, id_disciplina);
 
-		//ArrayList<String> preReqList = 
-		capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
+		ArrayList<Disciplina> preReqList = capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
 
 		//String urlName_disciplina = disciplinaDesejada.getUrlName();
 
 		//HttpsPage site = new HttpsPage(urlName_disciplina);
 
-		HttpsPage site = new HttpsPage("https://matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=113042&dep=650");
+		HttpsPage site = new HttpsPage("https://matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=113034&dep=650");
 		site.connect();
 		
 		String htmlString = site.getOnlyHTML();
@@ -340,7 +372,7 @@ public class TurmaController {
 			
 			index = htmlString.indexOf(Global.MW_CLASS_DAYS_END);
 			htmlString = htmlString.substring(index);// Parte a String
-			
+				
 			turma = new Turma(identificador, horarioInicio, horarioFim, total_vagas, vagas_disponiveis, vagas_ocupadas, diaList, professorList, disciplinaDesejada, locais);
 			turmaList.add(turma);
 			

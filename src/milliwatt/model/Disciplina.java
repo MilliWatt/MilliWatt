@@ -14,6 +14,11 @@ public class Disciplina {
 		
 	}
 	
+	public Disciplina(String codigoDisciplina, String nomeDisciplina) {
+		this.codigoDisciplina = codigoDisciplina;
+		this.nomeDisciplina = nomeDisciplina;
+	}
+	
 	public Disciplina(String codigoDisciplina, String nomeDisciplina, String urlName) {
 		this.codigoDisciplina = codigoDisciplina;
 		this.nomeDisciplina = nomeDisciplina;

@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>UnB - Matrícula Web -
+			Disciplina: Ementa/Programa
+		</title>
+		<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+		<Script language="javascript" src="/matriculaweb/script/form.js"></Script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="">
+		<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body class="padrao" background="/matriculaweb/imagens/fundo_main.gif" leftMargin="0" topMargin="0">
+		<center>
+
+			<br>
+			<img border="0" src="/matriculaweb/imagens/logopadraounb3.jpg" align="absmiddle">
+			<br><b>Disciplina: Ementa/Programa</b>
+			<br><A HREF="Javascript:window.close();">FECHAR JANELA</a>
+			<table width=100% cellpadding="10" cellspacing="0" id="TabelaPai" border="0">
+				<tr>
+					<td align="center" width="100%">
+						<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=3 Class=FrameCinza><tr CLASS=padrao bgcolor=white><td><b>Órgão:</b> </td><td>MAT - Departamento de Matemática.</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Código:</b> </td><td>113042</td></tr><tr CLASS=padrao bgcolor=white><td><b>Denominação:</b> </td><td>Calculo 2</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Nível:</b> </td><td>Graduação</td></tr><tr CLASS=padrao bgcolor=white><td><b>Vigência:</b> </td><td>1962/1</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Pré-req:</b> </td><td class=PadraoMenor>MAT-113034 Calculo 1 </td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Ementa:</b> </td><td class=PadraoMenor><p align=justify>- APROXIMACAO DE FUNCOES POR POLINOMIOS                                 <br /><br />- SEQUENCIAS E SERIES INFINITAS                                         <br /><br />- INTEGRAIS IMPROPRIAS                                                  <br /><br />- VETORES NO PLANO E NO ESPACO                                          <br /><br />- SECOES CANONICAS E SUPERFICIES QUADRICAS                              <br /><br />- FUNCOES DE VARIAS VARIAVEIS                                           <br /><br />- FORMULA DE TAYLOR                                                     <br /><br />- MAXIMOS E MINIMOS.</P></td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Programa:</b> </td><td class=PadraoMenor><p align=justify>1. Sequências; Séries numéricas<br /><br /><br /><br />2. Séries de potências: Soma, diferença, produto e quociente de<br /><br />séries de potências. Derivação e integração de Séries de<br /><br />Potências. Aplicações.<br /><br /><br /><br />3. Fórmula de Taylor, estimativa de resto e aproximações (Funções de uma Variável)<br /><br /><br /><br />4. Equações diferenciais ordinárias de 1a ordem: motivação; interpretação geométrica; equações com variáveis separadas; campos consevativos, equações diferenciais exatas; fatores integrantes; equações lineares de 1ª ordem; Método da Variação de Parâmetros; família de curvas ortogonais a uma dada família de curvas; aplicações; Teorema de Existência e Unicidade para o problema de valor inicial (sem demonstração)<br /><br /><br /><br />5. Equações diferenciais ordinárias lineares: oscilador harmônico; equações de 2ª ordem com coeficientes constantes; problema de valor inicial; equação característica; sistema fundamental de soluções; solução geral; oscilações livres; equações de ordem arbitrária com coeficientes constantes, caso homogêneo e não homogêneo; Métodos dos coeficientes a determinar; Método de Variação de Parâmetros. Oscilações forçadas; outras aplicações<br /><br /><br /><br />6. O método das séries de potências: A equação de Cauchy; equações lineares com coeficientes variáveis; resolução através de séries de potências; equação de Legendre; polinômios de Legengre; Método de Frobenius; equação indicial<br /><br /><br /><br />7. Transformada de Laplace: integrais impróprias, definição, propriedades básicas e exemplos; relação com a derivada e integral; aplicações à equações diferenciais.<br /><br /><br /><br />8. Sistemas lineares de equações diferenciais ordinárias de 1a ordem: motivação; sistemas lineares homogêneos com coeficientes constantes; plano de fase</P></td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Bibliografia:</b> </td><td class=PadraoMenor><p align=justify>G.B. THOMAS, 11a ed.<br /><br />C�?LCULO - VOLUME 2<br /><br />Pearson Education do Brasil.<br /><br /><br /><br />W. BOYCE, R. DIPRIMA, 9ª ed.<br /><br />Equações Diferenciais Elementares e problemas de valores de contorno<br /><br />LTC, 2010<br /><br /><br /><br />J. STEWART, 5a ed.<br /><br />C�?LCULO - VOLUME 2<br /><br />Pioneira/Thomson Learning.<br /><br /><br /><br />H. ANTON, H.<br /><br />Cálculo: um novo horizonte, vol. 2.  <br /><br />Bookman, 2000.<br /><br /><br /><br />G.S.S. �?vila<br /><br />Cálculo II - Diferencial e Integral <br /><br />LTC.<br /><br /><br /><br />L. LEITHOLD<br /><br />O Cálculo com Geometria Analítica Vol. 2 <br /><br />Harpa, 987.<br /><br /><br /><br />H. GUIDORIZZI, 5ª ed.<br /><br />Um curso de cálculo , Vol 4<br /><br />LTC, 2002.<br /><br /><br /><br />M. BRAUN<br /><br />Equações Diferenciais e suas aplicações<br /><br />Campus Ltda, 979</P></td></tr></table></center>
+					</td>
+				</tr>
+			</table>
+			<b>© 2004-2013 CPD - Centro de Informática<br>UnB - Universidade de Brasília</b>
+			<br><br>
+		</center>
+	</body>
+</HTML>
