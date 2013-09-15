@@ -2,14 +2,13 @@ package milliwatt.model;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class Disciplina {
 
 	private String codigoDisciplina;
 	private String nomeDisciplina;
 	private String urlName;
-	private URL url;
+	private URL url;	
 
 	public Disciplina(){
 		

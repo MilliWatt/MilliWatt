@@ -19,7 +19,7 @@ public class MainTeste {
 		ArrayList<Campus> campusList = CampusController.getCampusList();		
 		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, "4");		
 		ArrayList<Disciplina> disciplinaList = DisciplinaController.getDisciplinaList(departamentoList, "650");
-		TurmaController.getTurmaList(disciplinaList, "193640");
+		TurmaController.getTurmaList(disciplinaList, "113042");
 		
 		
 		

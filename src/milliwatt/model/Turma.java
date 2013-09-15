@@ -1,7 +1,7 @@
 package milliwatt.model;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+//import java.net.MalformedURLException;
+//import java.net.URL;
 import java.util.ArrayList;
 
 public class Turma {

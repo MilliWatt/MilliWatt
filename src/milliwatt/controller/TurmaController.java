@@ -1,9 +1,6 @@
 package milliwatt.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import milliwatt.model.Departamento;
 import milliwatt.model.Disciplina;
 import milliwatt.model.Professor;
 import milliwatt.model.Turma;
@@ -60,16 +57,21 @@ public class TurmaController {
 		String professor = "";
 		String[] informacoesDaTurma = new String[13];
 		
+		//System.out.println(htmlString.length());
+		
 		int inicio = htmlString.indexOf(inicioStringDias);//11049
 		int fim = htmlString.indexOf(fimStringDias);//12224;
 		String htmlStringPartida = htmlString.substring(inicio, fim);
-		fim = htmlStringPartida.length();
+		fim = htmlStringPartida.length()-1;
+		//System.out.println(fim);
+		//System.out.println(htmlStringPartida.charAt(fim));
 		int indice = 0;
 		int i = 0;
-		int p = 0;
-		while(inicio != fim){
-			p++;
-			System.out.println(p);
+		//int p = 0;
+		
+		while(true){
+			//p++;
+			
 			i = 0;
 
 			while (htmlStringPartida.charAt(i) != '>'){
@@ -113,20 +115,27 @@ public class TurmaController {
 			informacoesDaTurma[indice] = local;
 			indice++;
 			
-			System.out.println(i);
-			System.out.println(fim);
+//			System.out.println(i);
+//			System.out.println(fim);
+//			System.out.println(htmlStringPartida);
 			
-			System.out.println(htmlStringPartida);
 			htmlStringPartida = htmlStringPartida.substring(i, fim);
 			
-			fim = htmlStringPartida.length();		
+			//System.out.println(fim);
+			
+			fim = htmlStringPartida.length()-1;
+			
+			//System.out.println(fim);
+			
 			inicio = htmlStringPartida.indexOf(inicioStringDias);
 			
 			if(inicio == -1){
 				break;
 			}
+			
 			htmlStringPartida = htmlStringPartida.substring(inicio, fim);
-			break;
+			
+			//break;
 		}
 
 		inicio = htmlStringPartida.indexOf("<center>")+8;
@@ -176,6 +185,50 @@ public class TurmaController {
 		
 	}
 
+	public static String geraURLPreReqDisciplina(String codigoDisciplina){
+		return Global.MW_DISCIPLINE_PRE_REQ + codigoDisciplina;
+	}
+	
+	public static ArrayList<String> capturaPreRequisitosDisciplinaDesejada(Disciplina disciplinaDesejada){
+		
+		ArrayList<String> preRequisitosList = new ArrayList<String>();
+		String pre_req = "";
+		String auxiliar = "";
+		String codigoDisciplina = disciplinaDesejada.getCodigoDisciplina();
+		int index = 0;
+		
+		String urlName_preReq = geraURLPreReqDisciplina(codigoDisciplina);
+		System.out.println(urlName_preReq);
+		HttpsPage site = new HttpsPage(urlName_preReq);
+		
+		site.connect();
+		
+		String htmlString = site.getOnlyHTML();
+		
+		index = htmlString.lastIndexOf(Global.MW_DISCIPLINE_PRE_REQ_ID)+37;
+		
+		while(true){
+			while (htmlString.charAt(index)!='<'){
+				pre_req += htmlString.charAt(index);
+				index++;
+			}
+			System.out.println(pre_req);
+			preRequisitosList.add(pre_req);
+			
+			auxiliar = htmlString.substring(index, index+5);
+					
+			if(auxiliar.equals("</td>")){
+				break;
+			}else{
+				index+=4;
+			}
+		}
+		
+		site.disconnect();
+		
+		return preRequisitosList;
+		
+	}
 	
 	public static ArrayList<Turma> getTurmaList(ArrayList<Disciplina> disciplinaList, String id_disciplina){
 
@@ -196,10 +249,14 @@ public class TurmaController {
 		
 		Disciplina disciplinaDesejada = capturaDisciplinaDesejada(disciplinaList, id_disciplina);
 
+		//ArrayList<String> preReqList = 
+		capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
+
 		//String urlName_disciplina = disciplinaDesejada.getUrlName();
 
 		//HttpsPage site = new HttpsPage(urlName_disciplina);
-		HttpsPage site = new HttpsPage("https://matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=193640&dep=650");
+
+		HttpsPage site = new HttpsPage("https://matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=113042&dep=650");
 		site.connect();
 		
 		String htmlString = site.getOnlyHTML();
@@ -270,23 +327,22 @@ public class TurmaController {
 				
 			}
 			
+			System.out.println("ESTAMOS AQUI!");
+			System.out.println(identificador);//BRANCO
+			System.out.println(horarioFim);//NULO
+			System.out.println(horarioInicio);//NULO
+			System.out.println(total_vagas);//OK
+			System.out.println(vagas_ocupadas);//OK
+			System.out.println(vagas_disponiveis);//OK
+			System.out.println(diaList.size());//+-OK
+			System.out.println(professorList.size());//+-OK
+			System.out.println(disciplinaDesejada.getNomeDisciplina());//OK
+			
 			index = htmlString.indexOf(Global.MW_CLASS_DAYS_END);
 			htmlString = htmlString.substring(index);// Parte a String
 			
 			turma = new Turma(identificador, horarioInicio, horarioFim, total_vagas, vagas_disponiveis, vagas_ocupadas, diaList, professorList, disciplinaDesejada, locais);
 			turmaList.add(turma);
-			
-			System.out.println("ESTAMOS AQUI!");
-			System.out.println(turma.getIdentificador()+1);//BRANCO
-			System.out.println(turma.getHorarioFimTurma()+2);//NULO
-			System.out.println(turma.getHorarioInicioTurma()+3);//NULO
-			System.out.println(turma.getTotal_vagas());//OK
-			System.out.println(turma.getVagas_ocupadas());//OK
-			System.out.println(turma.getVagas_disponiveis());//OK
-			System.out.println(turma.getDiasTurma());//+-OK
-			System.out.println(turma.getListaProfessores());//+-OK
-			System.out.println(turma.getDisciplina().getNomeDisciplina()+9);//OK
-			
 			
 			identificador = "";
 			horarioInicio = "";
