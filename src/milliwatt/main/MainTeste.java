@@ -32,6 +32,8 @@ public class MainTeste {
 		ArrayList<Disciplina> disciplinaList = DisciplinaController.getDisciplinaList(departamentoList, siglaDepartamentoDesejado);
 		ArrayList<Turma> turmaList = TurmaController.getTurmaList(disciplinaList, codigoDisciplinaDesejada);
 		
+		JOptionPane.showMessageDialog(null, "O SISTEMA PODE DEMORAR ALGUNS MINUTOS! POR FAVOR AGUARDE!", "ATENÇÃO!", JOptionPane.WARNING_MESSAGE);
+		
 		JOptionPane.showMessageDialog(null, turmaList.get(0).getDiasTurma()+"\n"+turmaList.get(0).getHorarioInicioTurma()+"\n"+
 				turmaList.get(0).getHorarioFimTurma()+"\n"+turmaList.get(0).getListaProfessores().get(0).getNome(), 
 				"Informações das turmas!!", JOptionPane.WARNING_MESSAGE);
