@@ -62,19 +62,19 @@ public class DepartamentoController {
 		return sigla_departamento_invertida;
 	}
 	
-	public static Campus capturaCampusDesejado(ArrayList<Campus> campusList, String id){
+	public static Campus capturaCampusDesejado(ArrayList<Campus> campusList, String nomeDepartamentoDesejado){
 		
 		Campus campus = null;
 		
 		for(int i = 0; i < campusList.size(); i++ ){
-			if(campusList.get(i).getId().equals(id)) 
+			if(campusList.get(i).getNome().equals(nomeDepartamentoDesejado)) 
 				 campus = campusList.get(i);
 		}
 		
 		return campus;
 	}
 	
-	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String id){
+	public static ArrayList<Departamento> getDepartmentList(ArrayList<Campus> campusList, String nomeDepartamentoDesejado){
 		
 		int index = 0;
 		String id_departamento = "";
@@ -85,7 +85,7 @@ public class DepartamentoController {
 		Departamento departamento = null;
 		ArrayList<Departamento> departamentoList = new ArrayList<Departamento>();
 		
-		Campus campusDesejado = capturaCampusDesejado(campusList, id);
+		Campus campusDesejado = capturaCampusDesejado(campusList, nomeDepartamentoDesejado);
 		
 		String urlName_campus = campusDesejado.getUrlName();
 		

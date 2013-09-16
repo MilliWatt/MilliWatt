@@ -4,13 +4,14 @@ import java.io.Serializable;
 //import java.net.MalformedURLException;
 //import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @SuppressWarnings("serial")
 public class Turma implements Serializable{
 
 	private String identificador;
-	private String horarioInicioTurma;
-	private String horarioFimTurma;
+	private String diaHoraInicioTurma;
+	private String diaHoraFimTurma;
 	private String total_vagas;
 	private String vagas_disponiveis;
 	private String vagas_ocupadas;
@@ -18,17 +19,15 @@ public class Turma implements Serializable{
 	private ArrayList<String> diasTurma;
 	private ArrayList<Professor> listaProfessores;
 	private Disciplina disciplina;
-	//private String urlName;
-	//private URL url;
 
 	public Turma(){}
 
-	public Turma(String identificador, String horarioInicioTurma,String horarioFimTurma, String total_vagas, 
+	public Turma(String identificador, String diaHoraInicioTurma, String diaHoraFimTurma, String total_vagas, 
 			String vagas_disponiveis,String vagas_ocupadas, ArrayList<String> diasTurma,
 			ArrayList<Professor> listaProfessores, Disciplina disciplina, ArrayList<String> local) {
 		this.identificador = identificador;
-		this.horarioInicioTurma = horarioInicioTurma;
-		this.horarioFimTurma = horarioFimTurma;
+		this.diaHoraInicioTurma = diaHoraInicioTurma;
+		this.diaHoraFimTurma = diaHoraFimTurma;
 		this.total_vagas = total_vagas;
 		this.vagas_disponiveis = vagas_disponiveis;
 		this.vagas_ocupadas = vagas_ocupadas;
@@ -36,11 +35,7 @@ public class Turma implements Serializable{
 		this.listaProfessores = listaProfessores;
 		this.disciplina = disciplina;
 		this.local = local;
-//		try {
-//			this.url = new URL(urlName);
-//		} catch (MalformedURLException e) {
-//			e.printStackTrace();
-//		}
+
 	}
 
 	public Disciplina getDisciplina() {
@@ -50,22 +45,6 @@ public class Turma implements Serializable{
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
 	}
-
-//	public String getUrlName() {
-//		return urlName;
-//	}
-//
-//	public void setUrlName(String urlName) {
-//		this.urlName = urlName;
-//	}
-//
-//	public URL getUrl() {
-//		return url;
-//	}
-//
-//	public void setUrl(URL url) {
-//		this.url = url;
-//	}
 	
 	public String getTotal_vagas() {
 		return total_vagas;
@@ -116,19 +95,19 @@ public class Turma implements Serializable{
 	}
 
 	public String getHorarioInicioTurma() {
-		return horarioInicioTurma;
+		return diaHoraInicioTurma;
 	}
 
 	public void setHorarioInicioTurma(String horarioInicioTurma) {
-		this.horarioInicioTurma = horarioInicioTurma;
+		this.diaHoraInicioTurma = horarioInicioTurma;
 	}
 
 	public String getHorarioFimTurma() {
-		return horarioFimTurma;
+		return diaHoraFimTurma;
 	}
 
 	public void setHorarioFimTurma(String horarioFimTurma) {
-		this.horarioFimTurma = horarioFimTurma;
+		this.diaHoraFimTurma = horarioFimTurma;
 	}
 
 	public ArrayList<String> getDiasTurma() {

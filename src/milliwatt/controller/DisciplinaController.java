@@ -8,12 +8,12 @@ import milliwatt.utils.Global;
 
 public class DisciplinaController {
 	
-	public static Departamento capturaDepartamentoDesejado(ArrayList<Departamento> departamentoList, String id_departamento){
+	public static Departamento capturaDepartamentoDesejado(ArrayList<Departamento> departamentoList, String nome_departamento){
 		
 		Departamento departamento = null;
 
 		for(Departamento d : departamentoList){
-			if(d.getCodigo().equals(id_departamento))
+			if(d.getSigla().equals(nome_departamento))
 				departamento = d;
 		}
 		
@@ -69,11 +69,11 @@ public class DisciplinaController {
 		return Global.MW_CLASS_DISCIPLINE + id_disciplina + Global.MW_CLASS_DEPARTMENT + id_departamento;
 	}
 	
-	public static ArrayList<Disciplina> getDisciplinaList(ArrayList<Departamento> departamentoList, String id_departamento){
+	public static ArrayList<Disciplina> getDisciplinaList(ArrayList<Departamento> departamentoList, String nome_departamento){
 		
 		ArrayList<Disciplina> disciplinasList = new ArrayList<Disciplina>();
-		
-		Departamento departamentoDesejado = capturaDepartamentoDesejado(departamentoList, id_departamento);
+		String id_departamento = "";
+		Departamento departamentoDesejado = capturaDepartamentoDesejado(departamentoList, nome_departamento);
 
 		String urlName_departamento = departamentoDesejado.getUrlName();
 		

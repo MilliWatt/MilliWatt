@@ -25,10 +25,19 @@ public class TurmaController {
 	public static String capturaVagasOcupadasTurma(String htmlString, int index){
 		
 		String vagas_ocupadas = "";
+//		String auxiliar = "";
+//		
+//		while(htmlString.charAt(index) != '>'){
+//			auxiliar += htmlString.charAt(index);
+//		}
+//		
+//		if(auxiliar.contains("green")){
+//			index += 25;	
+//		}else{
+			index += 23;
+//		}		
 		
-		index += 23;
-		
-		while (htmlString.charAt(index)!= '<'){
+		while(htmlString.charAt(index) != '<'){
 			vagas_ocupadas += htmlString.charAt(index);
 			index++;
 		}
@@ -38,8 +47,17 @@ public class TurmaController {
 	public static String capturaVagasDisponiveisTurma(String htmlString, int index){
 		
 		String vagas_disponiveis = "";
-		
-		index += 23;
+//		String auxiliar = "";
+//		
+//		while(htmlString.charAt(index) != '>'){
+//			auxiliar += htmlString.charAt(index);
+//		}
+//		
+//		if(auxiliar.contains("blue")){
+//			index += 24;	
+//		}else{
+			index += 23;
+//		}	
 		
 		while (htmlString.charAt(index)!= '<'){
 			vagas_disponiveis += htmlString.charAt(index);
@@ -56,6 +74,7 @@ public class TurmaController {
 		String horaFim = "";
 		String horaInicio = "";
 		String professor = "";
+		String auxiliar = "";
 		ArrayList<String> informacoesDaTurma = new ArrayList<String>();
 		
 		int inicio = htmlString.indexOf(inicioStringDias);
@@ -116,17 +135,41 @@ public class TurmaController {
 			
 			fim = htmlStringPartida.length()-1;
 
+			dia = "";
+			local = "";
+			horaFim = "";
+			horaInicio = "";
+			professor = "";
 			i = 0;
 		}
-
+		
 		inicio = htmlStringPartida.indexOf("<center>")+8;
 		
-		while(htmlStringPartida.charAt(inicio) != '<'){
-			professor += htmlStringPartida.charAt(inicio);
-			inicio++;
-		}
+		while(true){
+			
+			while(htmlStringPartida.charAt(inicio) != '<'){
+				professor += htmlStringPartida.charAt(inicio);
+				inicio++;
+			}
 
-		informacoesDaTurma.add(professor);
+			informacoesDaTurma.add(professor);
+
+			auxiliar = htmlStringPartida.substring(inicio, inicio+13);
+			
+			if(auxiliar.equals("<br></center>")){
+				break;
+			}else{
+				inicio+=4;
+			}
+			professor = "";
+			auxiliar = "";
+
+		}
+		
+//		System.out.println(informacoesDaTurma.get(12));
+//		System.out.println(informacoesDaTurma.get(13));
+//		System.out.println(informacoesDaTurma.get(14));
+//		System.out.println(informacoesDaTurma.size());
 		
 		return informacoesDaTurma;
 	}
@@ -149,17 +192,11 @@ public class TurmaController {
 	public static Disciplina capturaDisciplinaDesejada(ArrayList<Disciplina> disciplinaList, String id_disciplina){
 		
 		Disciplina disciplina = null;
-		//int i = 1;
-		
+
 		for(Disciplina d : disciplinaList){
-			
-//			System.out.println(d.getCodigoDisciplina());
-//			System.out.println(i);
-//			i++;
-			if(d.getCodigoDisciplina().equals(id_disciplina)){
+
+			if(d.getCodigoDisciplina().equals(id_disciplina))
 				disciplina = d;
-				//System.out.println(disciplina.getUrlName());
-			}
 		}
 
 		return disciplina;
@@ -247,11 +284,11 @@ public class TurmaController {
 	}
 	
 	public static ArrayList<Turma> getTurmaList(ArrayList<Disciplina> disciplinaList, String id_disciplina){
-
+		
 		int index = 0;
 		String identificador = "";
-		String horarioInicio = "";
-		String horarioFim = "";
+		String diaHoraInicio = "";
+		String diaHoraFim = "";
 		String total_vagas = "";
 		String vagas_disponiveis = "";
 		String vagas_ocupadas = "";
@@ -267,107 +304,158 @@ public class TurmaController {
 
 		ArrayList<Disciplina> preReqList = capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
 
-		//String urlName_disciplina = disciplinaDesejada.getUrlName();
+		String urlName_disciplina = disciplinaDesejada.getUrlName();
 
-		//HttpsPage site = new HttpsPage(urlName_disciplina);
+		HttpsPage site = new HttpsPage(urlName_disciplina);
 
-		HttpsPage site = new HttpsPage("https://matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=193640&dep=650");
 		site.connect();
 		
 		String htmlString = site.getOnlyHTML();
 		
-		while(index !=-1){
+		//String htmlStringAuxilar = htmlString;
+		
+		while(index != -1){
 
 			index = htmlString.indexOf(Global.MW_CLASS_ID);
 
 			identificador = capturaIdentificadorTurma(htmlString, index);
 			
+			htmlString = htmlString.substring(index);
+			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES);
 			
 			total_vagas = capturaTotalVagasTurma(htmlString, index);
+			
+			htmlString = htmlString.substring(index);
 			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_OCCUPIED);
 			
 			vagas_ocupadas = capturaVagasOcupadasTurma(htmlString, index);
 			
+			htmlString = htmlString.substring(index);
+			
 			index = htmlString.indexOf(Global.MW_CLASS_VACANCIES_AVAILABLE);
 			
 			vagas_disponiveis = capturaVagasDisponiveisTurma(htmlString, index);
 			
+			htmlString = htmlString.substring(index);
+			
 			informacoesDaTurma = capturaInformacoesDaTurma(Global.MW_CLASS_DAYS_BEGIN, Global.MW_CLASS_DAYS_END, htmlString);
-			
-//			for(int o = 0; o < informacoesDaTurma.length; o++){
-//				System.out.println("---------------");
-//				System.out.println(informacoesDaTurma[o]);
-//			}
-			
+
 			switch(informacoesDaTurma.size()){
 			
 				case 5:
 					diaList.add(informacoesDaTurma.get(0));
-					horarioInicio = informacoesDaTurma.get(1);
-					horarioFim = informacoesDaTurma.get(2);
+					diaHoraInicio = informacoesDaTurma.get(1);
+					diaHoraFim = informacoesDaTurma.get(2);
 					locais.add(informacoesDaTurma.get(3));
-					professor = new Professor(informacoesDaTurma.get(4));
-					professorList.add(professor);
-					System.out.println("CASO 5");
+					
+					for(int i = 4; i < informacoesDaTurma.size(); i++){
+						professor = new Professor(informacoesDaTurma.get(i));
+						professorList.add(professor);	
+					}
+					
+//					System.out.println("Dia 1: " + diaList.get(0));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(0));
+					
+					for(int i = 0; i < professorList.size();i++){
+//						System.out.println("Professor(es): "+professorList.get(i).getNome());
+					}
+					
 					break;
 				case 9:
 					diaList.add(informacoesDaTurma.get(0));
-					horarioInicio = informacoesDaTurma.get(1);
-					horarioFim = informacoesDaTurma.get(2);
+					diaHoraInicio = informacoesDaTurma.get(1);
+					diaHoraFim = informacoesDaTurma.get(2);
 					locais.add(informacoesDaTurma.get(3)); 
+					
+//					System.out.println("Dia 1: " + diaList.get(0));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(0));
+					
 					diaList.add(informacoesDaTurma.get(4));
-					horarioInicio = informacoesDaTurma.get(5);
-					horarioFim = informacoesDaTurma.get(6);
+					diaHoraInicio = informacoesDaTurma.get(5);
+					diaHoraFim = informacoesDaTurma.get(6);
 					locais.add(informacoesDaTurma.get(7));
-					professor = new Professor(informacoesDaTurma.get(8));
-					professorList.add(professor);
-					System.out.println("CASO 9");
+					
+//					System.out.println("Dia 2: " + diaList.get(1));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(1));
+					
+					for(int i = 8; i < informacoesDaTurma.size(); i++){
+						professor = new Professor(informacoesDaTurma.get(i));
+						professorList.add(professor);	
+					}
+
+//					System.out.println("Professor(es): "+professorList.get(0).getNome());
+					
 					break;
 				case 13:
+					//d h h l d h h l d h h l p p p
 					diaList.add(informacoesDaTurma.get(0));
-					horarioInicio = informacoesDaTurma.get(1);
-					horarioFim = informacoesDaTurma.get(2);
+					diaHoraInicio = informacoesDaTurma.get(1);
+					diaHoraFim = informacoesDaTurma.get(2);
 					locais.add(informacoesDaTurma.get(3));
+					
+//					System.out.println("Dia 1: " + diaList.get(0));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(0));
+					
 					diaList.add(informacoesDaTurma.get(4));
-					horarioInicio = informacoesDaTurma.get(5);
-					horarioFim = informacoesDaTurma.get(6);
+					diaHoraInicio = informacoesDaTurma.get(5);
+					diaHoraFim = informacoesDaTurma.get(6);
 					locais.add(informacoesDaTurma.get(7));
+					
+//					System.out.println("Dia 2: " + diaList.get(1));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(1));
+					
 					diaList.add(informacoesDaTurma.get(8));
-					horarioInicio = informacoesDaTurma.get(9);
-					horarioFim = informacoesDaTurma.get(10);
+					diaHoraInicio = informacoesDaTurma.get(9);
+					diaHoraFim = informacoesDaTurma.get(10);
 					locais.add(informacoesDaTurma.get(11));
-					professor = new Professor(informacoesDaTurma.get(12));
-					professorList.add(professor);
-					System.out.println("CASO 13");
+					
+//					System.out.println("Dia 3: " + diaList.get(2));
+//					System.out.println("Hora Inicio: "+ diaHoraInicio);
+//					System.out.println("Hora Fim: "+ diaHoraFim);
+//					System.out.println("Local: "+ locais.get(2));
+					
+					for(int i = 12, j = 0; i < informacoesDaTurma.size(); i++, j++){
+						professor = new Professor(informacoesDaTurma.get(i));
+						professorList.add(professor);
+//						System.out.println("Professor(es): "+ professorList.get(j).getNome());
+					}
+					
+
+					
 					break;
 				
 			}
 			
-			System.out.println("ESTAMOS AQUI!");
-			System.out.println("Turma: " + identificador);//BRANCO
-			System.out.println("Hora Fim: "+horarioFim);//NULO
-			System.out.println("Hora Inicio: "+horarioInicio);//NULO
-			System.out.println("Vagas: "+total_vagas);//OK
-			System.out.println("Vagas ocupadas: "+vagas_ocupadas);//OK
-			System.out.println("Vagas disponiveis: "+vagas_disponiveis);//OK
-			System.out.println("Total de dias: "+diaList.size());//+-OK
-			System.out.println("Total de profs: "+professorList.size());//+-OK
-			System.out.println("Nome da materia: "+disciplinaDesejada.getNomeDisciplina());//OK
+//			System.out.println("Turma: " + identificador);
+//			System.out.println("Nome da materia: "+disciplinaDesejada.getNomeDisciplina());
+//			System.out.println("Vagas: "+total_vagas);
+//			System.out.println("Vagas ocupadas: "+vagas_ocupadas);
+//			System.out.println("Vagas disponiveis: "+vagas_disponiveis);
 			
+			htmlString = htmlString.substring(index);
 			index = htmlString.indexOf(Global.MW_CLASS_DAYS_END);
-			htmlString = htmlString.substring(index);// Parte a String
 				
-			turma = new Turma(identificador, horarioInicio, horarioFim, total_vagas, vagas_disponiveis, vagas_ocupadas, diaList, professorList, disciplinaDesejada, locais);
+			turma = new Turma(identificador, diaHoraInicio, diaHoraFim, total_vagas, vagas_disponiveis, vagas_ocupadas, diaList, professorList, disciplinaDesejada, locais);
 			turmaList.add(turma);
 			
 			identificador = "";
-			horarioInicio = "";
-			horarioFim = "";
 			total_vagas = "";
 			vagas_disponiveis = "";
 			vagas_ocupadas = "";
+			
+			index = htmlString.indexOf(Global.MW_CLASS_ID);
 
 		}
 		

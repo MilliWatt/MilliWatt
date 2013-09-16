@@ -24,6 +24,7 @@ public class Disciplina implements Serializable{
 	public Disciplina(String codigoDisciplina, String nomeDisciplina, String urlName) {
 		this.codigoDisciplina = codigoDisciplina;
 		this.nomeDisciplina = nomeDisciplina;
+		this.urlName = urlName;
 		try {
 			this.url = new URL(urlName);
 		} catch (MalformedURLException e) {

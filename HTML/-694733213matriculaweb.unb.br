@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>UnB - Matrícula Web -
+			Disciplina: Ementa/Programa
+		</title>
+		<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+		<Script language="javascript" src="/matriculaweb/script/form.js"></Script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="">
+		<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body class="padrao" background="/matriculaweb/imagens/fundo_main.gif" leftMargin="0" topMargin="0">
+		<center>
+
+			<br>
+			<img border="0" src="/matriculaweb/imagens/logopadraounb3.jpg" align="absmiddle">
+			<br><b>Disciplina: Ementa/Programa</b>
+			<br><A HREF="Javascript:window.close();">FECHAR JANELA</a>
+			<table width=100% cellpadding="10" cellspacing="0" id="TabelaPai" border="0">
+				<tr>
+					<td align="center" width="100%">
+						<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=3 Class=FrameCinza><tr CLASS=padrao bgcolor=white><td><b>Órgão:</b> </td><td>FGA - UnB - Faculdade do Gama</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Código:</b> </td><td>193712</td></tr><tr CLASS=padrao bgcolor=white><td><b>Denominação:</b> </td><td>Engenharia de Segurança do Trabalho</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Nível:</b> </td><td>Graduação</td></tr><tr CLASS=padrao bgcolor=white><td><b>Vigência:</b> </td><td>1971/2</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Pré-req:</b> </td><td class=PadraoMenor>Disciplina sem pré-requisitos</td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Ementa:</b> </td><td class=PadraoMenor><p align=justify>Introdução, interligação entre as várias engenharias e a engenharia de segurança do trabalho. <br /><br />Legislação. Organização da área SSST. Acidente de trabalho e acidente de trajeto.<br /><br />Doenças profissionais e doenças do trabalho. Comunicação e treinament. Normalização - NR's. Riscos profissionais: Avaliação e controle. Ergonomia. Outros assuntos em segurança e higiene do trabalho.</P></td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Programa:</b> </td><td class=PadraoMenor><p align=justify>Introdução e histórico; Conceitos e definições básicas; Estatísticas; Análise de acidentes; Legislação e normas; Controle estatístico de acidentes e acidentados;  Noções de epidemiologia e toxicologia; CIPA;  EPIs; EPCs; PPRA; PCMSO; SESMT; Noções de primeiros socorros e combate a incêndios; Avaliações ambientais; Insalubridade e Periculosidade; Avaliação e controle de riscos profissionais.</P></td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Bibliografia:</b> </td><td class=PadraoMenor><p align=justify>Autor: Saliba, Tuffi<br /><br />Obra: Curso Básico de Segurança e Higiene Ocupacional<br /><br />Editora: LTr Editora<br /><br />Ano 2004<br /><br /><br /><br />Autor: Equipe Atlas<br /><br />Edição nº: 64<br /><br />Obra: Manual de Legislação de Segurança e Medicina no Trabalho<br /><br />Editora: Atlas<br /><br />Ano: 2006<br /><br /><br /><br />Autor: <br /><br />Obra: Curso de Engenharia de Segurança do Trabalho<br /><br />Editora: Fundacentro<br /><br />Ano: 1982</P></td></tr></table></center>
+					</td>
+				</tr>
+			</table>
+			<b>© 2004-2013 CPD - Centro de Informática<br>UnB - Universidade de Brasília</b>
+			<br><br>
+		</center>
+	</body>
+</HTML>
