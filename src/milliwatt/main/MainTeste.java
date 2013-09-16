@@ -24,30 +24,22 @@ public class MainTeste {
 				"Olá, Seja Bem Vindo(a)!", JOptionPane.INFORMATION_MESSAGE);
 		String siglaDepartamentoDesejado = JOptionPane.showInputDialog(null, "Informe a sigla do Departamento Desejado!",  
 				"Olá, Seja Bem Vindo(a)!", JOptionPane.INFORMATION_MESSAGE);
-		String codigoDisciplinaDesejada = JOptionPane.showInputDialog(null, "Informe o nome da Disciplina Desejada!",  
+		String codigoDisciplinaDesejada = JOptionPane.showInputDialog(null, "Informe o codigo da Disciplina Desejada!",  
 				"Olá, Seja Bem Vindo(a)!", JOptionPane.INFORMATION_MESSAGE);
-		
-		ArrayList<String> substrings = new ArrayList<String>();
-		String substring = "";
-		
-		for(int i = 0; i < codigoDisciplinaDesejada.length(); i++){
-			if(codigoDisciplinaDesejada.charAt(i) != ' '){
-				substring += codigoDisciplinaDesejada.charAt(i);	
-			}
-			substrings.add(substring);
-			substring = "";
-			JOptionPane.showMessageDialog(null, substrings);	
-		}
 		
 		ArrayList<Campus> campusList = CampusController.getCampusList();		
 		ArrayList<Departamento> departamentoList = DepartamentoController.getDepartmentList(campusList, campusDesejado);		
 		ArrayList<Disciplina> disciplinaList = DisciplinaController.getDisciplinaList(departamentoList, siglaDepartamentoDesejado);
 		ArrayList<Turma> turmaList = TurmaController.getTurmaList(disciplinaList, codigoDisciplinaDesejada);
 		
-		CampusDAO.toFile(campusList);
-		ArrayList<Campus> load=  CampusDAO.toObject();
+		JOptionPane.showMessageDialog(null, turmaList.get(0).getDiasTurma()+"\n"+turmaList.get(0).getHorarioInicioTurma()+"\n"+
+				turmaList.get(0).getHorarioFimTurma()+"\n"+turmaList.get(0).getListaProfessores().get(0).getNome(), 
+				"Informações das turmas!!", JOptionPane.WARNING_MESSAGE);
 		
-		JOptionPane.showMessageDialog(null, load.get(3).getDepartamentoList().get(0).getSigla());
+//		CampusDAO.toFile(campusList);
+//		ArrayList<Campus> load=  CampusDAO.toObject();
+//		
+//		JOptionPane.showMessageDialog(null, load.get(3).getDepartamentoList().get(0).getSigla());
 		
 	}
 

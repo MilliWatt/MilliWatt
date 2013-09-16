@@ -19,7 +19,7 @@
 	<title>UnB - Matrícula Web
 		
 		-
-		Oferta de disciplinas por Departamento
+		Dados da Oferta
 		
 	</title>
 	<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
@@ -111,7 +111,7 @@
 						<td class="padrao" align="center" valign="middle">
 							<h4>
 								<br>
-								Oferta de disciplinas por Departamento
+								Dados da Oferta
 								
 							</h4>
 						</td>
@@ -164,7 +164,32 @@
 <TD width="620" background="/matriculaweb/imagens/efeito_fundo2.jpg" class="padrao" valign="top" align="left" class="padrao">
 <div style='padding:5px'>
 
-<center>1 departamento existente.<br><br><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=5 CLASS=FrameCinza><tr CLASS=PadraoBranco bgcolor=#6B9A8C><td><b>Código</b></td><td><b>Sigla</b></td><td><b>Denominação</b></td></tr><tr CLASS=PadraoMenor bgcolor=white><td>650</td><td>FGA</td><td><a href=oferta_dis.aspx?cod=650>UnB - Faculdade do Gama</a></td></tr></table></center>
+<center><table width=70% border=0 class=framecinza>  <tr>      <td bgcolor=white valign=middle width=100% colspan=2 align=center style='font-family: Arial; font-size: 8pt'> <font face='Verdana, Arial' size=1>  Departamento: <strong><a href=/matriculaweb/graduacao/oferta_dis.aspx?cod=650>FGA - UnB - Faculdade do Gama</a></strong>      </font> </td>  </tr>  <tr>     <td align=center valign=middle style=font-family: Arial; font-size: 8pt>     <font face=Verdana, Arial size=1>Código da Disciplina: <font class=padraomaior><b>201294</b></font><br>Nome: <a title="Clique para ver a ementa da disciplina" href="JavaScript:AbrirJanelaP('/matriculaweb/graduacao/disciplina_pop.aspx?cod=201294','0')">Técnicas de Programação<img src=/matriculaweb/imagens/livro.gif align=absmiddle border=0></a>    </font></td>    <td width=30% align=center valign=middle  style=font-family: Arial; font-size: 8pt>     <b>Créditos</b><br>(Teor-Prat-Ext-Est)<br><font face=Verdana, Arial size=1>000-004-000-000    </font> </td>  </tr>  <tr>      <td bgcolor=white valign=middle width=100% colspan=2 align=center style='font-family: Arial; font-size: 8pt'> <font face='Verdana, Arial' size=1>  <strong><a href=/matriculaweb/graduacao/faltavaga_rel.aspx?cod=201294>Alunos não atendidos por falta de vagas</a></strong>      </font> </td>  </tr></table><br><table width=90% border=0 class=framecinza cellpadding=5 cellspacing=0>  <tr align=center class=padraomenorbranco bgcolor=#6B9A8C><td colspan='6'><b>Campus:Gama</b></td></tr>  <tr align=center class=padraomenorbranco><td colspan='6'>&nbsp;</td></tr>  <tr align=center class=padraomenorbranco bgcolor=#6B9A8C><td><b>Turma</b></td><td><b>Vagas</b></td><td><b>Turno</b></td><td><b>Horário/Local</b></td><td><b>Professor</b></td><td><b>Obs</b></td></tr>  <tr bgcolor=#FFFFFF>      <td width=40>         <div align=center valign=middle class=titulo><font size=4><b>A</b></font></div>        <font size=1 face=Verdana, Arial, Helvetica, sans-serif><br></font>      </td>     <td width=200 align=middle bgcolor=whitesmoke>         <b><font size=2 face=Verdana, Arial, Helvetica, sans-serif>Vagas: 40        <br>Ocup.: <font color=red>40</font>        <br>Disp.: <font color=red>0</font></font></b>     </td><td width=40 nowrap>         <div align=center><font size=1 face=Verdana, Arial, Helvetica, sans-serif>Diurno<br><br><img src=/matriculaweb/imagens/sol.gif></font></div>     </td><td width=200 nowrap class=padrao align=center><table cellpading=2 cellspacing=1 style='font-size:8;' border=0><tr><td title=""><font color=red>DOM</font></td><td title="Horário: 10:00 - 11:50
+Local: FGA-I6"><font color=darkgreen>SEG </font></td><td title=""><font color=darkgreen>TER </font></td><td title=""><font color=darkgreen>QUA </font></td><td title=""><font color=darkgreen>QUI </font></td><td title="Horário: 10:00 - 11:50
+Local: FGA-I6"><font color=darkgreen>SEX </font></td><td title=""><font color=darkgreen>S�?B </font></td></tr><tr><td title="
+
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#E7F3D6><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"></a></td><td title="
+Horário: 10:00 - 11:50
+Local: FGA-I6
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#FFFFF7><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"><div onmouseout="this.style.background='#FFFFF7';OcultaDIVS('h48819920')"  onmouseover="this.style.background='#FDFF39';if(ready == 'yes'){MostraDIV('h48819920')}" style='border:0;width:20px;height:10px;'></div></a></td><td title="
+
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#E7F3D6><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"></a></td><td title="
+
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#E7F3D6><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"></a></td><td title="
+
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#E7F3D6><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"></a></td><td title="
+Horário: 10:00 - 11:50
+Local: FGA-I6
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#FFFFF7><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"><div onmouseout="this.style.background='#FFFFF7';OcultaDIVS('h48819960')"  onmouseover="this.style.background='#FDFF39';if(ready == 'yes'){MostraDIV('h48819960')}" style='border:0;width:20px;height:10px;'></div></a></td><td title="
+
+
+ CLIQUE para ver a legenda das cores" height=7 bgcolor=#E7F3D6><a href="javaScript:AbrirJanelaPP('/matriculaweb/graduacao/legendacor_pop.aspx','0')"></a></td></tr></table><div style="border: white 1px solid;" id="h48819920"><b>Segunda</b>     <font size=1 color=black><b>10:00</font>    <font size=1 color=brown>11:50</b></font><br><i><img src=/matriculaweb/imagens/subseta_dir.gif align=top> FGA-I6</i></div><div style="border: white 1px solid;" id="h48819960"><b>Sexta</b>     <font size=1 color=black><b>10:00</font>    <font size=1 color=brown>11:50</b></font><br><i><img src=/matriculaweb/imagens/subseta_dir.gif align=top> FGA-I6</i></div></font>     </td><td valign=middle class=padraomenor bgcolor=whitesmoke><center>MAURICIO SERRANO<br></center>     </td><td>         <div align=center><font size=1 face=Verdana, Arial, Helvetica, sans-serif>&nbsp;        </font></div>     </td>  </tr>  <tr bgcolor=#FFFFFF>      <td colspan = '4'>         <strong><font size=1 face=Verdana, Arial, Helvetica, sans-serif>Turma: FGA - Técnicas de Programação        </font></strong></td>     <td colspan = '2'>         <strong><font size=1 face=Verdana, Arial, Helvetica, sans-serif>Sexo: Ambos        </font></strong></td></tr>  <tr bgcolor=#E0E0E0>     <td colspan = '6'>         <strong><font size=1 face=Verdana, Arial, Helvetica, sans-serif>Reserva/Vagas         </font></strong>        <div align=left><font size=1 face=Verdana, Arial, Helvetica, sans-serif>Engenharia de Software(Diurno)/40<br>     </font></div></td></tr><tr><td colspan=6 bgcolor=white height=20></td></tr></table></center><br><table width=90% border=0 align=center cellpadding=0 cellspacing=0>  <tr >      <td colspan=3><font size=1 face=Verdana, Arial, Helvetica, sans-serif><b>Legenda</b> do campo 'Obs':<br><br><img align=absmiddle src=/matriculaweb/imagens/1.gif>      Disciplina restrita (s&oacute; pode ser cursada pelo aluno que possu&iacute;-la      em seu curr&iacute;culo)     <br><img align=absmiddle src=/matriculaweb/imagens/2.gif> Turma de hor&aacute;rio fixo     <br><img align=absmiddle src=/matriculaweb/imagens/3.gif> Turma com reserva exclusiva (s&oacute; matricula aluno do curso      para o qual est&aacute; reservada) <br><br></font></td>  </tr></table></center>
 
 
 </div>

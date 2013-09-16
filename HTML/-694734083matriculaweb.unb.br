@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>UnB - Matrícula Web -
+			Disciplina: Ementa/Programa
+		</title>
+		<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+		<Script language="javascript" src="/matriculaweb/script/form.js"></Script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="">
+		<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body class="padrao" background="/matriculaweb/imagens/fundo_main.gif" leftMargin="0" topMargin="0">
+		<center>
+
+			<br>
+			<img border="0" src="/matriculaweb/imagens/logopadraounb3.jpg" align="absmiddle">
+			<br><b>Disciplina: Ementa/Programa</b>
+			<br><A HREF="Javascript:window.close();">FECHAR JANELA</a>
+			<table width=100% cellpadding="10" cellspacing="0" id="TabelaPai" border="0">
+				<tr>
+					<td align="center" width="100%">
+						<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=3 Class=FrameCinza><tr CLASS=padrao bgcolor=white><td><b>Órgão:</b> </td><td>FGA - UnB - Faculdade do Gama</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Código:</b> </td><td>193640</td></tr><tr CLASS=padrao bgcolor=white><td><b>Denominação:</b> </td><td>Métodos de Desenvolvimento de Software</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Nível:</b> </td><td>Graduação</td></tr><tr CLASS=padrao bgcolor=white><td><b>Vigência:</b> </td><td>1971/2</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Pré-req:</b> </td><td class=PadraoMenor>FGA-195341 Orientação a Objetos </td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Ementa:</b> </td><td class=PadraoMenor><p align=justify>Modelos de ciclo de vida e de processos; Processo Unificado. Desenvolvimento rápido de software. Métodos de desenvolvimento de software (orientando a dados, orientado a funções, orientado a objetos, orientado a conhecimento, orientado a aspectos). Métodos de desenvolvimento de softare no contexto das normas e dos modelos de processo de softaware. Ferramentas</P></td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Programa:</b> </td><td class=PadraoMenor><p align=justify>1.  Processos de Desenvolvimento de software<br /><br />     - Modelos de Processo de Desenvolvimento de Software (ciclo de vida)<br /><br />     - Atividades de Processo<br /><br />     - Disciplinas de desenvolvimento de software<br /><br /><br /><br />2.  Métodos e Ferramentras de Desenvovimento de Software<br /><br />     . Métodos e ferramentas orientados a funções e dados<br /><br />     . Métodos e ferramentas orientados a objetos<br /><br /><br /><br />3.  Processo Unificado de Desenvolvimento de Software<br /><br />     - Conceitos<br /><br />     - Fases de ciclo de vida<br /><br />     - Utilização de UML<br /><br />     - Planejamento e execução de projetos utilizando o Processo Unificado<br /><br /><br /><br />4.  Métodos �?geis de Desenvolvimento de Software<br /><br />     - Método SCRUM de Gerenciamento de Projetos<br /><br />     - Extreme Programming (xp)</P></td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Bibliografia:</b> </td><td class=PadraoMenor><p align=justify>Autor: Pressman, Roger S.<br /><br />Obra: Engenharia de Software<br /><br />Editora: McGraw-hill<br /><br />Edição: 6ª<br /><br />Ano: 2006<br /><br /><br /><br /><br /><br />Autor: Sommerville, Ian<br /><br />Obra: Engenharia de Softawre<br /><br />Edição: 8ª<br /><br />Editora: Pearson Addison-Wesley<br /><br />Ano: 2007<br /><br /><br /><br /><br /><br />Autor: Pfleeger, Shari Lawrende: Atlee, Joanne M.<br /><br />Obra: Software Engineering<br /><br />Edição: 4ª<br /><br />Editora: Prentice Hall<br /><br />Ano: 2009<br /><br /><br /><br /><br /><br />Autor: Booch, Grady/Rumbaugh, James/Jacobson, Ivar<br /><br />Obra: UML: Guia do usuário<br /><br />Edição: 2ª<br /><br />Editora: Elsevier<br /><br />Ano: 2005<br /><br /><br /><br /><br /><br />Autor: Kroll, Per/Kruchten, Philippe<br /><br />Obra: The Rational Unified Process Made Easy: a Practitioner's Guide To The Rup.<br /><br />Editora: Addison-Wesley<br /><br />Ano: 2003<br /><br />Edição: 1ª</P></td></tr></table></center>
+					</td>
+				</tr>
+			</table>
+			<b>© 2004-2013 CPD - Centro de Informática<br>UnB - Universidade de Brasília</b>
+			<br><br>
+		</center>
+	</body>
+</HTML>

@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>UnB - Matrícula Web -
+			Disciplina: Ementa/Programa
+		</title>
+		<LINK REL="SHORTCUT ICON" HREF="/matriculaweb/imagens/favicon.ico">
+		<Script language="javascript" src="/matriculaweb/script/form.js"></Script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio.NET 7.0">
+		<meta name="CODE_LANGUAGE" content="Visual Basic 7.0">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="">
+		<link href="/matriculaweb/estilos.css" type="text/css" rel="stylesheet">
+	</HEAD>
+	<body class="padrao" background="/matriculaweb/imagens/fundo_main.gif" leftMargin="0" topMargin="0">
+		<center>
+
+			<br>
+			<img border="0" src="/matriculaweb/imagens/logopadraounb3.jpg" align="absmiddle">
+			<br><b>Disciplina: Ementa/Programa</b>
+			<br><A HREF="Javascript:window.close();">FECHAR JANELA</a>
+			<table width=100% cellpadding="10" cellspacing="0" id="TabelaPai" border="0">
+				<tr>
+					<td align="center" width="100%">
+						<center><TABLE WIDTH=90% BORDER=0 CELLSPACING=0 CELLPADDING=3 Class=FrameCinza><tr CLASS=padrao bgcolor=white><td><b>Órgão:</b> </td><td>FGA - UnB - Faculdade do Gama</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Código:</b> </td><td>201294</td></tr><tr CLASS=padrao bgcolor=white><td><b>Denominação:</b> </td><td>Técnicas de Programação</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td><b>Nível:</b> </td><td>Graduação</td></tr><tr CLASS=padrao bgcolor=white><td><b>Vigência:</b> </td><td>2008/2</td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Pré-req:</b> </td><td class=PadraoMenor>FGA-195341 Orientação a Objetos </td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Ementa:</b> </td><td class=PadraoMenor><p align=justify>Programação Defensiva e Programação por Contrato.<br /><br />Documentação, Tratamento de Erros e Depuração de código.<br /><br />Programação Segura.<br /><br />Boas Práticas de Programação e Projeto.<br /><br />Programação Concorrente e Paralela.<br /><br />Otimização de Programas e Análise de Desempenho.<br /><br /></P></td></tr><tr CLASS=padrao bgcolor=white><td valign=top><b>Programa:</b> </td><td class=PadraoMenor><p align=justify>1. Programação Defensiva<br /><br />a.	Conceitualização e importância<br /><br />b.	Principais Técnicas para Programação Defensiva<br /><br /><br /><br />2. Programação por Contrato<br /><br />a.	Pré-condições<br /><br />b.	Pós-condições<br /><br />c.	Asserções<br /><br /><br /><br />3. Documentação de código<br /><br />a.	Técnicas para escrever Código Legível e Auto-Explicativo<br /><br />b.	Técnicas para Documentar Código<br /><br /><br /><br />4. Tratamento de Erros e Depuração de Código<br /><br />a.	Erros versus Exceções<br /><br />b.	Técnicas para Prevenir o Código de Erros Inevitáveis<br /><br />c.	Técnicas para Teste de Código<br /><br />d.	Técnicas de Depuração de Código<br /><br /><br /><br />5. Programação Segura<br /><br />a.	Identificação de Vulnerabilidade no Código<br /><br />b.	Técnicas de Implementação de Código Seguro<br /><br /><br /><br />6. Boas Práticas de Programação e Projeto<br /><br />a.	Simplicidade<br /><br />b.	Modularidade<br /><br />c.	Extensibilidade<br /><br />d.	Evitar redundância<br /><br />e.	Portabilidade<br /><br />f.	Internacionalização e localização<br /><br />g.	Desenvolvimento e Uso de API<br /><br /><br /><br />7. Programação Concorrente e paralela	<br /><br />a.	Arquiteturas multiprocessadas e multinúcleos<br /><br />b.	Paralelismo e controle de concorrência<br /><br />c.	Modelos de programação paralela<br /><br /><br /><br />8. Otimização de Programas	<br /><br />a.	Identificação de Código Ineficiente<br /><br />b.	Técnicas para Escrever Código Eficiente<br /><br /><br /><br />9.Análise de Desempenho<br /><br />    a. Análise Dinâmica de Programas versus Análise Estática de Código<br /><br />    b. Profiling<br /><br />    c. Slicing Tools<br /><br /></P></td></tr><tr CLASS=padrao bgcolor=#E7F3D6><td valign=top><b>Bibliografia:</b> </td><td class=PadraoMenor><p align=justify>1. Autor: Pete Goodliffe<br /><br />    Obra: Code Craft<br /><br />    Editor: No Starch Press<br /><br />    Edição: 1ª <br /><br />    Ano: 2006<br /><br /><br /><br />2. Autor: Steve McConnell<br /><br />    Obra: Code Complete.<br /><br />    Editor: Microsoft Press<br /><br />    Edição: 2ª<br /><br />    Ano: 2004<br /><br /><br /><br />3. Autor: Clay Breshears<br /><br />    Obra: The Art of Concurrency <br /><br />    Editor: O'Reilly Media<br /><br />    Edição: 1ª<br /><br />    Ano: 2009<br /><br /><br /><br />4. Autor: Brian W.Kernighan and Rob Pike<br /><br />    Obra: The Practice of Programming<br /><br />    Editor: Addison Wesley<br /><br />    Edição: 1ª <br /><br />    Ano: 1999<br /><br /><br /><br />5. Autor: Maurice Herlihy and Nir Shavit<br /><br />    Obra: The Art of Multiprocessor Programming<br /><br />    Editor: Morgan Kaufmann<br /><br />    Edição: 1ª <br /><br />    Ano: 2008<br /><br /></P></td></tr></table></center>
+					</td>
+				</tr>
+			</table>
+			<b>© 2004-2013 CPD - Centro de Informática<br>UnB - Universidade de Brasília</b>
+			<br><br>
+		</center>
+	</body>
+</HTML>
