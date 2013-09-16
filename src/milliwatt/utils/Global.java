@@ -4,6 +4,7 @@ public class Global {
 	//sempre termina com BARRA
 	public static final String KEY_DIR = "./KEY/";
 	public static final String HTML_DIR = "./HTML/";
+	public static final String FILE_DIR = "./FILE/";
 	public static final String MW_HOME = "https://matriculaweb.unb.br/matriculaweb/";
 	
 	

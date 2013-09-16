@@ -1,10 +1,12 @@
 package milliwatt.model;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Campus {
+@SuppressWarnings("serial")
+public class Campus implements Serializable{
 	String id;
 	String nome;
 	String urlName;

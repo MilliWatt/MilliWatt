@@ -1,10 +1,12 @@
 package milliwatt.model;
 
+import java.io.Serializable;
 //import java.net.MalformedURLException;
 //import java.net.URL;
 import java.util.ArrayList;
 
-public class Turma {
+@SuppressWarnings("serial")
+public class Turma implements Serializable{
 
 	private String identificador;
 	private String horarioInicioTurma;

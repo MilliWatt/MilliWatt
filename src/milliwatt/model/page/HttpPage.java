@@ -7,12 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
-
-import com.sun.net.ssl.HttpsURLConnection;
-
 import milliwatt.utils.Global;
 
 public class HttpPage extends Page {

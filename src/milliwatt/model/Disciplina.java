@@ -1,9 +1,11 @@
 package milliwatt.model;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Disciplina {
+@SuppressWarnings("serial")
+public class Disciplina implements Serializable{
 
 	private String codigoDisciplina;
 	private String nomeDisciplina;

@@ -1,16 +1,19 @@
 package milliwatt.model;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
-public class Departamento {
+@SuppressWarnings("serial")
+public class Departamento implements Serializable{
 
 	private String codigo;
 	private String nome;
 	private String sigla;
 	private String urlName;
 	private URL url;
-	
+	private ArrayList<Disciplina> DisciplinaList;
 	
 	public Departamento(String codigo, String nome, String sigla, String urlName) {
 		
@@ -23,6 +26,7 @@ public class Departamento {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+		this.DisciplinaList = new ArrayList<Disciplina>();
 	}
 
 	public String getSigla() {
@@ -64,6 +68,16 @@ public class Departamento {
 	public void setUrl(URL url) {
 		this.url = url;
 	}
+
+	public ArrayList<Disciplina> getDisciplinalist() {
+		return DisciplinaList;
+	}
+
+	public void setDisciplinalist(ArrayList<Disciplina> disciplinalist) {
+		DisciplinaList = disciplinalist;
+	}
+
+	
 
 	
 	
