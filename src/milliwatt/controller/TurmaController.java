@@ -302,7 +302,7 @@ public class TurmaController {
 		
 		Disciplina disciplinaDesejada = capturaDisciplinaDesejada(disciplinaList, id_disciplina);
 
-		ArrayList<Disciplina> preReqList = capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
+//		ArrayList<Disciplina> preReqList = capturaPreRequisitosDisciplinaDesejada(disciplinaDesejada);
 
 		String urlName_disciplina = disciplinaDesejada.getUrlName();
 
@@ -426,7 +426,7 @@ public class TurmaController {
 //					System.out.println("Hora Fim: "+ diaHoraFim);
 //					System.out.println("Local: "+ locais.get(2));
 					
-					for(int i = 12, j = 0; i < informacoesDaTurma.size(); i++, j++){
+					for(int i = 12; i < informacoesDaTurma.size(); i++){
 						professor = new Professor(informacoesDaTurma.get(i));
 						professorList.add(professor);
 //						System.out.println("Professor(es): "+ professorList.get(j).getNome());

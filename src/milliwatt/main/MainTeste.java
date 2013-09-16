@@ -8,7 +8,7 @@ import milliwatt.controller.CampusController;
 import milliwatt.controller.DepartamentoController;
 import milliwatt.controller.DisciplinaController;
 import milliwatt.controller.TurmaController;
-import milliwatt.dao.CampusDAO;
+//import milliwatt.dao.CampusDAO;
 import milliwatt.model.Campus;
 import milliwatt.model.Departamento;
 import milliwatt.model.Disciplina;

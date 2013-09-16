@@ -1,10 +1,7 @@
 package milliwatt.model;
 
 import java.io.Serializable;
-//import java.net.MalformedURLException;
-//import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 @SuppressWarnings("serial")
 public class Turma implements Serializable{
